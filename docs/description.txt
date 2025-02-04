@@ -1,0 +1,102 @@
+
+
+Description of Dust Collection System
+
+1.  The System consists of a Blower that moves the air containing dust, 
+a network of ducts that guide air from different Machines to the Blower, 
+and the Machines.  The Blower moves the air cyclone separator to remove
+the heavier material into a bin.  The remaining air with fine dust in it
+is then passed to a filter which then recycles the clean air into the room.
+
+2.  Each Machine has a Actuator associated with it that can open the duct or 
+close it, thus controlling whether or not the Blower is drawing air from that
+ machine.  
+ 
+ An Actuator can be either a LinearActuator or a ServoActuator.
+ Turning the Actuator ON opens the blast gate so air can flow, and turning the 
+ Actuator OFF closes the gate.
+
+3.  Each Machine also has a Sensor associated with it.  The Sensor determines 
+whether or not the Machine has been turned on or turned off.  It does this by
+periodically reading the current in the power cord and transforming it into 
+ON or OFF. This value can be read at any time, and is updated at 
+roughly 10 Hz.
+
+4.  The System also has a number of digital switches that can be used by the
+operator to manually control the system.  There is a toggle switch for each 
+gate to determine if it is in manual or auto mode, and another toggle switch 
+for each gate to open and close it by controlling the Actuator.
+
+5.  The operation of the System is as follows:
+
+    When a Machine is turned on (the Sensor reads 1), the corresponding blast
+    gate is opened (Actuator turned ON).  The Blower is turned on as well by
+    a solid-state relay.  Multiple machines may be turned on or off at any time.
+    
+    When a Machine is turned off (the Sensor reads 0), a timeout for that 
+    gate is started with a value of N seconds (probably 30).  While that timer
+    is running, the gate stays open and the Blower remains on -- this flushes
+    the duct of dusty air.  When the timer expires, the System must deterimine
+    if there are any OTHER Machines that are either running, or in the waiting
+    period to close. When all machines that were ON and are now off have 
+    completed their wait period, the Blower is turned OFF by a solid-state 
+    relay.
+    
+    When the 'ManualMode' switch for an Actuator is ON, the corresponding
+    Sensor value is replaced by the value of the "on"/"off" switch for that gate.
+    When the 'ManualMode' switch is OFF, the actual current sensor value is used.
+    
+6.  There are 4 Machines:
+        Machine1: tablesaw
+        Machine2: drillpress
+        Machine3: lathe
+        Machine4: router
+        
+
+ --------------------- ChatGPT analysis ---------------------------
+ 
+ Your description provides a comprehensive overview of the system, and I can see
+ the logical structure and purpose behind each component. Below are my 
+ evaluations and questions to clarify or expand certain points:
+ 
+Evaluations
+
+    Clear Workflow: The description explains the flow of operations well, from
+    sensors detecting machine status to actuators controlling the gates and the blower system. It’s easy to understand the interactions among components.
+
+    Flexibility: The inclusion of manual mode and digital switches gives the system flexibility, allowing users to override automatic operations when necessary.
+
+    Safety Considerations: The flush period ensures no residual dust remains in the ducts before shutting off the blower, which is a thoughtful feature to maintain cleanliness and minimize hazards.
+
+    Automation Logic: The system’s design accounts for scenarios where multiple machines are in use simultaneously, with clear rules for determining when the blower should be on or off.
+
+Questions for Clarification
+
+    System Scale:
+        Is there a maximum limit to the number of machines the system can support, or could it be extended to more than 4 machines in the future?
+
+    Blower Relay Logic:
+        What happens if a machine is turned off but another machine is turned on during the timeout period? Does the timeout reset, or do you merge the logic for machines still operating and those waiting to close?
+
+    Manual Mode:
+        When a gate is in manual mode, does switching to manual control immediately override the state of the actuator, or does it only take effect after the next sensor check/update?
+
+    Actuator Types:
+        Are LinearActuators and ServoActuators interchangeable for the same gate, or are they assigned based on specific requirements? If the latter, what criteria dictate which type is used?
+
+    Sensor Calibration:
+        How do you handle false positives or fluctuations in current readings from sensors? For example, a machine may briefly draw current during startup or idle but not actually be "on."
+
+    Timeout Value:
+        Is the timeout value (30 seconds) adjustable, and can it be set per machine, or is it global across the system?
+
+    System Behavior During Manual Override:
+        If a user manually opens or closes a gate, does the system still track its original state, or does it fully delegate control to manual input until switched back?
+
+    Power Failures or Restarts:
+        How does the system handle power outages or unexpected restarts? Will the system reset to default states, or does it persist the state of each gate and blower operation?
+
+These questions aim to refine the system’s robustness, clarify edge cases, and ensure that it functions smoothly under various scenarios. Let me know how you’d like to proceed!
+    
+    
+    
