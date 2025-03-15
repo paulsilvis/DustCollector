@@ -1,0 +1,19 @@
+digraph "classes" {
+rankdir=BT
+charset="utf-8"
+"actuator.Actuator" [color="black", fontcolor="black", label=<{Actuator|id<br ALIGN="LEFT"/>name<br ALIGN="LEFT"/>|<I>close</I>()<br ALIGN="LEFT"/><I>open</I>()<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"gate.Gate" [color="black", fontcolor="black", label=<{Gate|actuator<br ALIGN="LEFT"/>id<br ALIGN="LEFT"/>name<br ALIGN="LEFT"/>op_state : S0<br ALIGN="LEFT"/>state : CLOSED, OPEN<br ALIGN="LEFT"/>timer<br ALIGN="LEFT"/>tool<br ALIGN="LEFT"/>|close()<br ALIGN="LEFT"/>open()<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"gate.GateState" [color="black", fontcolor="black", label=<{GateState|name<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"leddriver.LEDController" [color="black", fontcolor="black", label=<{LEDController|pin : int<br ALIGN="LEFT"/>|cleanup(): None<br ALIGN="LEFT"/>off(): None<br ALIGN="LEFT"/>on(): None<br ALIGN="LEFT"/>toggle(): None<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"switchdriver2.MCP23017Inputs" [color="black", fontcolor="black", label=<{MCP23017Inputs|address : int<br ALIGN="LEFT"/>bus<br ALIGN="LEFT"/>debounce_time : float<br ALIGN="LEFT"/>last_states : int<br ALIGN="LEFT"/>|read_switch(switch_id)<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"gate.OperatingState" [color="black", fontcolor="black", label=<{OperatingState|name<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"relaydriver.RelayController" [color="black", fontcolor="black", label=<{RelayController|pin : int<br ALIGN="LEFT"/>|activate(): None<br ALIGN="LEFT"/>cleanup(): None<br ALIGN="LEFT"/>deactivate(): None<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"sensor.Sensor" [color="black", fontcolor="black", label=<{Sensor|id<br ALIGN="LEFT"/>name<br ALIGN="LEFT"/>state : OFF<br ALIGN="LEFT"/>|<I>read</I>()<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"sensor.SensorState" [color="black", fontcolor="black", label=<{SensorState|name<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"steppercontroller.StepperController" [color="black", fontcolor="black", label=<{StepperController|i2c<br ALIGN="LEFT"/>mcp<br ALIGN="LEFT"/>steppers : dict<br ALIGN="LEFT"/>|home_stepper(stepper_name)<br ALIGN="LEFT"/>stepper_move(stepper_name, steps, direction, delay, stop_at_limit)<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"switchdriver.SwitchReader" [color="black", fontcolor="black", label=<{SwitchReader|pin : int<br ALIGN="LEFT"/>|cleanup(): None<br ALIGN="LEFT"/>is_pressed(): bool<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"timer.Timer" [color="black", fontcolor="black", label=<{Timer|timeout : int<br ALIGN="LEFT"/>timer : NoneType<br ALIGN="LEFT"/>|check_timer_expired()<br ALIGN="LEFT"/>clear_timer()<br ALIGN="LEFT"/>set_timer(timeout)<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"tool.Tool" [color="black", fontcolor="black", label=<{Tool|gate<br ALIGN="LEFT"/>sensor<br ALIGN="LEFT"/>state : OFF<br ALIGN="LEFT"/>|get_state()<br ALIGN="LEFT"/>}>, shape="record", style="solid"];
+"tool.ToolState" [color="black", fontcolor="black", label=<{ToolState|name<br ALIGN="LEFT"/>|}>, shape="record", style="solid"];
+"timer.Timer" -> "gate.Gate" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="timer", style="solid"];
+}

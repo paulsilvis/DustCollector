@@ -10,6 +10,6 @@ class CurrentSensor(Sensor):
         """Super keeps track of id and state."""
         super().__init__()
 
-    def read(self):
+    def read(self) -> Sensor.SensorState:
         """Simulate reading from a current sensor."""
         return self.state  # somebody else will have set this for the mock

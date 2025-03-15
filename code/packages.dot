@@ -1,0 +1,16 @@
+digraph "packages" {
+rankdir=BT
+charset="utf-8"
+"actuator" [color="black", label=<actuator>, shape="box", style="solid"];
+"gate" [color="black", label=<gate>, shape="box", style="solid"];
+"leddriver" [color="black", label=<leddriver>, shape="box", style="solid"];
+"relaydriver" [color="black", label=<relaydriver>, shape="box", style="solid"];
+"sensor" [color="black", label=<sensor>, shape="box", style="solid"];
+"steppercontroller" [color="black", label=<steppercontroller>, shape="box", style="solid"];
+"stepperdriver" [color="black", label=<stepperdriver>, shape="box", style="solid"];
+"switchdriver" [color="black", label=<switchdriver>, shape="box", style="solid"];
+"switchdriver2" [color="black", label=<switchdriver2>, shape="box", style="solid"];
+"timer" [color="black", label=<timer>, shape="box", style="solid"];
+"tool" [color="black", label=<tool>, shape="box", style="solid"];
+"gate" -> "timer" [arrowhead="open", arrowtail="none"];
+}

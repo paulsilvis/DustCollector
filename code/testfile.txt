@@ -1,0 +1,146 @@
+You said:
+vscode and git.  ok -- show me how to use vscode with git or gitkraken.  detail the usual work flow from initial checkin of code to pulling, editing, pushing etc.
+ChatGPT said:
+
+Hi, Paul. Bob here. What's up?
+
+I'll walk you through using VS Code with Git, covering the typical workflow, from the initial check-in of your code to pulling, editing, and pushing changes. I'll also include how to do this in GitKraken if you prefer a GUI.
+VS Code + Git Workflow
+
+VS Code has built-in Git support, making it easy to manage repositories without the command line.
+1. Initial Setup
+Install Git
+
+    If not already installed, download and install Git from git-scm.com.
+    Open VS Code, then go to View → Command Palette (Ctrl+Shift+P).
+    Type Git: Enable and ensure Git is enabled.
+
+Set Up Git in VS Code
+
+    Open VS Code and navigate to your project folder.
+    Open the integrated terminal (Ctrl+`` ) and run:
+
+git config --global user.name "Your Name"
+git config --global user.email "your-email@example.com"
+
+If you're using SSH, generate a key with:
+
+    ssh-keygen -t rsa -b 4096 -C "your-email@example.com"
+
+    Then, add it to your GitHub or GitLab account.
+
+2. Initial Check-in (Commit & Push)
+
+    Initialize a Git repository
+    Open the integrated terminal in VS Code (Ctrl+`` ) and run:
+
+git init
+
+Stage files for commit
+If you want to add everything:
+
+git add .
+
+Commit the files
+
+git commit -m "Initial commit"
+
+Connect to a remote repository (GitHub, GitLab, Bitbucket, etc.):
+
+git remote add origin <your-repo-url>
+
+Push to remote
+
+    git push -u origin main
+
+3. Usual Workflow: Pull, Edit, Commit, Push
+Step 1: Pull Latest Changes
+
+Before making any changes, pull the latest version from the remote repository:
+
+git pull origin main
+
+Step 2: Make Changes
+
+    Edit your files in VS Code.
+    Save the changes.
+
+Step 3: Stage & Commit Changes
+
+    Stage changes
+
+git add .
+
+Commit changes
+
+    git commit -m "Describe what you changed"
+
+Step 4: Push Changes
+
+Push your committed changes back to the remote repository:
+
+git push origin main
+
+4. Handling Branches
+Create a New Branch
+
+If you're working on a new feature or fix:
+
+git checkout -b new-feature
+
+or in VS Code:
+
+    Open Source Control (Ctrl+Shift+G).
+    Click on the current branch name and select Create New Branch.
+
+Switch to a Different Branch
+
+git checkout main
+
+Merge a Branch into main
+
+    Switch to the main branch:
+
+git checkout main
+
+Merge the feature branch:
+
+git merge new-feature
+
+Push the updated main branch:
+
+    git push origin main
+
+5. Using Git in GitKraken (GUI Alternative)
+
+If you prefer a GUI, GitKraken simplifies the process.
+Setup
+
+    Install GitKraken from gitkraken.com.
+    Open GitKraken and clone or open a repository.
+    Authenticate with GitHub, GitLab, or Bitbucket.
+
+Workflow
+
+    Pull changes: Click "Pull" to sync the latest updates.
+    Make changes in VS Code.
+    Stage & Commit:
+        Click "Stage All".
+        Add a commit message and click "Commit Changes".
+    Push changes: Click "Push".
+
+Branching in GitKraken
+
+    Create a new branch: Click "Branch" → "New Branch".
+    Switch branches: Click on a branch name and select "Checkout".
+    Merge branches: Drag & drop one branch onto another.
+
+That's the full workflow in both VS Code and GitKraken.
+
+Let me know if you need anything clarified.
+
+/Bob
+
+
+ChatGPT can make mistakes. Check important info.
+
