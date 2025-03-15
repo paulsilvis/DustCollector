@@ -2,9 +2,11 @@
 PY_FILES = \
     timer.py \
     hardware/leddriver.py \
+    hardware/ledcontroller.py \
     hardware/relaydriver.py \
     hardware/switchdriver.py \
     hardware/switchdriver2.py \
+    hardware/switchcontroller.py \
     hardware/stepperdriver.py \
     hardware/steppercontroller.py \
     sensor.py \
