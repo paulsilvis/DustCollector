@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 24.2.7.2 (Linux)"/>
+	<meta name="created" content="2025-03-16T21:07:02.529635395"/>
+	<meta name="changed" content="2025-03-16T21:36:40.307859332"/>
+	<style type="text/css">
+		h5.cjk { font-family: "Noto Serif CJK SC" }
+		h5.ctl { font-family: "Noto Sans Devanagari" }
+		h6.cjk { font-family: "Noto Serif CJK SC" }
+		h6.ctl { font-family: "Noto Sans Devanagari" }
+		h3.cjk { font-family: "Noto Serif CJK SC" }
+		h3.ctl { font-family: "Noto Sans Devanagari" }
+		h4.cjk { font-family: "Noto Serif CJK SC" }
+		h4.ctl { font-family: "Noto Sans Devanagari" }
+		pre.cjk { font-family: "Noto Sans Mono CJK SC", monospace }
+		code.cjk { font-family: "Noto Sans Mono CJK SC", monospace }
+	</style>
+</head>
+<body lang="en-US" dir="ltr"><h5 class="western"><font face="Noto Mono">You
+said:</font></h5>
+<p><font face="Noto Mono">my raspberry pi 4b is extremely slow when
+using a browser (chromium). my internet speed test shows 71 Mbps
+download, 60 Mbps upload, but sites that work fine on my laptop hang
+for minutes on the Pi. </font>
+</p>
+<h6 class="western"><font face="Noto Mono">ChatGPT said:</font></h6>
+<p><font face="Noto Mono">Yeah, that's a common frustration with the
+Raspberry Pi 4B. Even though the Pi 4B has decent hardware compared
+to older models (quad-core Cortex-A72 CPU, up to 8GB RAM), it can
+still feel sluggish when browsing, especially with heavier websites.
+Here are a few key reasons and some potential fixes:</font></p>
+<h3 class="western"><strong><font face="Noto Mono">Why it's slow:</font></strong></h3>
+<ol>
+	<li><p><strong><font face="Noto Mono">Chromium is resource-hungry:</font></strong><font face="Noto Mono">
+	Chromium on the Pi is not as optimized as on x86 laptops. Websites
+	nowadays are heavy with JavaScript, ads, and media, which bogs down
+	the Pi's limited CPU and GPU.</font></p></li>
+	<li><p><strong><font face="Noto Mono">Limited hardware acceleration:</font></strong><font face="Noto Mono">
+	While the Pi 4 does have VideoCore VI GPU, hardware acceleration in
+	browsers like Chromium is still hit-or-miss. Some video decoding and
+	graphical rendering defaults to the CPU.</font></p></li>
+	<li><p><strong><font face="Noto Mono">Thermal throttling:</font></strong><font face="Noto Mono">
+	If your Pi runs hot (above ~80°C), the CPU will throttle down to
+	prevent overheating, reducing performance.</font></p></li>
+	<li><p><strong><font face="Noto Mono">MicroSD bottleneck:</font></strong><font face="Noto Mono">
+	If you're using a slower microSD card (non A1/A2-rated), it can
+	impact overall system responsiveness, including browser cache and
+	swap file performance.</font></p></li>
+</ol>
+<h3 class="western"><strong><font face="Noto Mono">Steps to improve
+performance:</font></strong></h3>
+<h4 class="western"><font face="Noto Mono">1. </font><strong><font face="Noto Mono">Enable
+hardware acceleration:</font></strong></h4>
+<ul>
+	<li><p style="margin-bottom: 0in"><font face="Noto Mono">Open
+	Chromium and navigate to </font><code class="western"><font face="Noto Mono">chrome://flags</font></code><font face="Noto Mono">.
+	</font>
+	</p></li>
+	<li><p style="margin-bottom: 0in"><font face="Noto Mono">Enable: </font>
+	</p>
+	<ul>
+		<li><p style="margin-bottom: 0in"><font face="Noto Mono">&quot;Override
+		software rendering list&quot; </font>
+		</p></li>
+		<li><p style="margin-bottom: 0in"><font face="Noto Mono">&quot;GPU
+		rasterization&quot; </font>
+		</p></li>
+	</ul>
+	<li><p><font face="Noto Mono">Restart Chromium. </font>
+	</p></li>
+</ul>
+<h4 class="western"><font face="Noto Mono">2. </font><strong><font face="Noto Mono">Use
+a lighter browser:</font></strong></h4>
+<ul>
+	<li><p style="margin-bottom: 0in"><font face="Noto Mono">Try
+	installing </font><strong><font face="Noto Mono">Midori</font></strong><font face="Noto Mono">
+	or </font><strong><font face="Noto Mono">Epiphany</font></strong><font face="Noto Mono">
+	(the GNOME Web browser), which can be lighter-weight. </font>
+	</p></li>
+	<li><p><font face="Noto Mono">Or try </font><strong><font face="Noto Mono">Firefox
+	ESR</font></strong><font face="Noto Mono"> which sometimes feels
+	snappier on ARM devices. </font>
+	</p></li>
+</ul>
+<h4 class="western"><font face="Noto Mono">3. </font><strong><font face="Noto Mono">Block
+ads and scripts:</font></strong></h4>
+<ul>
+	<li><p><font face="Noto Mono">Install a browser extension like
+	</font><strong><font face="Noto Mono">uBlock Origin</font></strong><font face="Noto Mono">
+	to cut down on ads, trackers, and other heavy scripts. </font>
+	</p></li>
+</ul>
+<h4 class="western"><font face="Noto Mono">4. </font><strong><font face="Noto Mono">Overclock
+(optional):</font></strong></h4>
+<ul>
+	<li><p style="margin-bottom: 0in"><font face="Noto Mono">Safely
+	overclock your Pi if you have good cooling (heat sinks and/or a
+	fan). </font>
+	</p></li>
+	<li><p><font face="Noto Mono">Example </font><code class="western"><font face="Noto Mono">/boot/config.txt</font></code><font face="Noto Mono">
+	settings: </font>
+	</p></li>
+</ul>
+<ul>
+	<li><pre class="western"><code class="western"><font face="Noto Mono">over_voltage=6</font></code>
+<code class="western"><font face="Noto Mono">arm_freq=2000</font></code>
+<code class="western"><font face="Noto Mono">gpu_freq=750</font></code></pre></li>
+	<li><p><font face="Noto Mono">Make sure to monitor temperatures. </font>
+	</p></li>
+</ul>
+<h4 class="western"><font face="Noto Mono">5. </font><strong><font face="Noto Mono">Use
+an SSD instead of microSD:</font></strong></h4>
+<ul>
+	<li><p><font face="Noto Mono">Boot from an external SSD via USB 3.0.
+	This can dramatically improve disk I/O. </font>
+	</p></li>
+</ul>
+<h4 class="western"><font face="Noto Mono">6. </font><strong><font face="Noto Mono">Lower
+resolution / lightweight desktop:</font></strong></h4>
+<ul>
+	<li><p style="margin-bottom: 0in"><font face="Noto Mono">If you’re
+	running at 1080p or higher, try dropping to 720p. </font>
+	</p></li>
+	<li><p><font face="Noto Mono">Switch to a lighter desktop
+	environment like </font><strong><font face="Noto Mono">XFCE</font></strong><font face="Noto Mono">
+	or </font><strong><font face="Noto Mono">LXQt</font></strong><font face="Noto Mono">
+	instead of full </font><strong><font face="Noto Mono">Raspberry Pi
+	OS with Desktop</font></strong><font face="Noto Mono">. </font>
+	</p></li>
+</ul>
+<h4 class="western"><font face="Noto Mono">7. </font><strong><font face="Noto Mono">Check
+background processes:</font></strong></h4>
+<ul>
+	<li><p><font face="Noto Mono">Run </font><code class="western"><font face="Noto Mono">htop</font></code><font face="Noto Mono">
+	and make sure you don’t have unnecessary daemons eating CPU
+	cycles. </font>
+	</p></li>
+</ul>
+<hr/>
+
+<p><font face="Noto Mono">Want me to help you tweak your
+</font><code class="western"><font face="Noto Mono">/boot/config.txt</font></code><font face="Noto Mono">
+or walk you through switching to SSD boot?</font></p>
+<p><font face="Noto Mono">/Bob</font></p>
+<h5 class="western"><font face="Noto Mono">You said:</font></h5>
+<p><font face="Noto Mono">let's talk about switching to ssd boot. I
+have a drive handy.</font></p>
+<h6 class="western"><font face="Noto Mono">ChatGPT said:</font></h6>
+<p><font face="Noto Mono">Great! Switching to SSD boot on the
+Raspberry Pi 4B can make a </font><strong><font face="Noto Mono">huge
+difference</font></strong><font face="Noto Mono"> in responsiveness.
+The Pi 4B’s USB 3.0 ports allow you to take advantage of much
+faster read/write speeds compared to a microSD card.</font></p>
+<h3 class="western"><font face="Noto Mono">Here's the process to set
+up SSD boot:</font></h3>
+<hr/>
+
+<h3 class="western"><strong><font face="Noto Mono">Step 1: Verify
+bootloader version</font></strong></h3>
+<p><font face="Noto Mono">The Pi 4B needs a bootloader that supports
+USB boot (most units shipped after mid-2020 already do, but let’s
+check):</font></p>
+<ol>
+	<li><p><font face="Noto Mono">Run this command:</font></p></li>
+</ol>
+<ul>
+	<li><pre class="western" style="margin-bottom: 0.2in"><code class="western"><font face="Noto Mono">vcgencmd bootloader_version</font></code></pre></li>
+</ul>
+<p><font face="Noto Mono">If it shows a date </font><strong><font face="Noto Mono">later
+than September 3, 2020</font></strong><font face="Noto Mono">, you’re
+good.</font></p>
+<ul>
+	<li><p><font face="Noto Mono">If outdated:</font></p></li>
+</ul>
+<ol>
+	<li value="2"><pre class="western"><code class="western"><font face="Noto Mono">sudo rpi-eeprom-update -a</font></code>
+<code class="western"><font face="Noto Mono">sudo reboot</font></code></pre></li>
+</ol>
+<hr/>
+
+<h3 class="western"><strong><font face="Noto Mono">Step 2: Prepare
+the SSD</font></strong></h3>
+<ol>
+	<li><p style="margin-bottom: 0in"><font face="Noto Mono">Plug your
+	SSD into your PC or the Pi via USB 3.0. </font>
+	</p></li>
+	<li><p style="margin-bottom: 0in"><font face="Noto Mono">Use
+	</font><strong><font face="Noto Mono">Raspberry Pi Imager</font></strong><font face="Noto Mono">
+	(on your PC or Pi) to flash </font><strong><font face="Noto Mono">Raspberry
+	Pi OS</font></strong><font face="Noto Mono"> directly to the SSD. </font>
+	</p>
+	<ul>
+		<li><p style="margin-bottom: 0in"><font face="Noto Mono">Select
+		</font><strong><font face="Noto Mono">&quot;Raspberry Pi OS
+		(64-bit)&quot;</font></strong><font face="Noto Mono"> if you want
+		the best experience. </font>
+		</p></li>
+		<li><p><font face="Noto Mono">Set up Wi-Fi and SSH if desired in
+		the imager’s advanced options. </font>
+		</p></li>
+	</ul>
+</ol>
+<hr/>
+
+<h3 class="western"><strong><font face="Noto Mono">Step 3: Boot from
+SSD</font></strong></h3>
+<ol>
+	<li><p style="margin-bottom: 0in"><font face="Noto Mono">Power off
+	the Pi. </font>
+	</p></li>
+	<li><p style="margin-bottom: 0in"><font face="Noto Mono">Unplug the
+	microSD card. </font>
+	</p></li>
+	<li><p style="margin-bottom: 0in"><font face="Noto Mono">Connect the
+	SSD to a </font><strong><font face="Noto Mono">blue USB 3.0 port</font></strong><font face="Noto Mono">
+	on the Pi. </font>
+	</p></li>
+	<li><p><font face="Noto Mono">Power up the Pi – it should boot
+	from the SSD directly. </font>
+	</p></li>
+</ol>
+<hr/>
+
+<h3 class="western"><strong><font face="Noto Mono">Step 4: Verify</font></strong></h3>
+<p><font face="Noto Mono">Once booted, run:</font></p>
+<pre class="western" style="margin-bottom: 0.2in"><code class="western"><font face="Noto Mono">lsblk</font></code></pre><p>
+<font face="Noto Mono">You should see your SSD as </font><code class="western"><font face="Noto Mono">/dev/sda1</font></code><font face="Noto Mono">
+mounted as </font><code class="western"><font face="Noto Mono">/boot</font></code><font face="Noto Mono">
+and </font><code class="western"><font face="Noto Mono">/</font></code><font face="Noto Mono">
+(root).</font></p>
+<hr/>
+
+<h3 class="western"><strong><font face="Noto Mono">Optional Step 5:
+Performance tweak</font></strong></h3>
+<p><font face="Noto Mono">You can enable USB quirks if you experience
+boot issues or slow performance:</font></p>
+<ol>
+	<li><p><font face="Noto Mono">Edit </font><code class="western"><font face="Noto Mono">cmdline.txt</font></code><font face="Noto Mono">:
+	</font>
+	</p></li>
+</ol>
+<ol>
+	<li><pre class="western" style="margin-bottom: 0.2in"><code class="western"><font face="Noto Mono">sudo nano /boot/cmdline.txt</font></code></pre></li>
+	<li><p><font face="Noto Mono">Add </font><code class="western"><font face="Noto Mono">usb-storage.quirks=XXXX:YYYY:u</font></code><font face="Noto Mono">
+	after </font><code class="western"><font face="Noto Mono">rootwait</font></code><font face="Noto Mono">
+	where </font><code class="western"><font face="Noto Mono">XXXX:YYYY</font></code><font face="Noto Mono">
+	is your SSD’s vendor and product ID (get this via </font><code class="western"><font face="Noto Mono">lsusb</font></code><font face="Noto Mono">).
+	</font>
+	</p></li>
+</ol>
+<hr/>
+
+<h3 class="western"><strong><font face="Noto Mono">SSD Performance
+Tip</font></strong></h3>
+<ul>
+	<li><p><font face="Noto Mono">Make sure your SSD enclosure uses a
+	decent USB-to-SATA bridge (ASMedia ASM1153, JMicron JMS578, or
+	JMS580 are good). Some cheap adapters don’t play nice with the
+	Pi’s USB 3. </font>
+	</p></li>
+</ul>
+<hr/>
+
+<h3 class="western"><strong><font face="Noto Mono">Result</font></strong></h3>
+<p><font face="Noto Mono">You'll likely notice </font><strong><font face="Noto Mono">faster
+app launches</font></strong><font face="Noto Mono">, </font><strong><font face="Noto Mono">snappier
+Chromium browsing</font></strong><font face="Noto Mono">, and </font><strong><font face="Noto Mono">quicker
+system boot</font></strong><font face="Noto Mono"> times.</font></p>
+<hr/>
+
+<p><font face="Noto Mono">Want me to help tune </font><code class="western"><font face="Noto Mono">/etc/fstab</font></code><font face="Noto Mono">
+next or recommend good SSD USB enclosures if you’re not sure about
+the one you have?</font></p>
+<p><font face="Noto Mono">/Bob</font></p>
+<h5 class="western"><font face="Noto Mono">You said:</font></h5>
+<p><font face="Noto Mono">what commands do I use to ensure that all
+the other software I've loaded onto my pi by now make it to the SSD?</font></p>
+<h6 class="western"><font face="Noto Mono">ChatGPT said:</font></h6>
+<p><font face="Noto Mono">Good question! Since you already have a
+working microSD setup with installed software, you’ll want to </font><strong><font face="Noto Mono">clone
+your current microSD card to the SSD</font></strong><font face="Noto Mono">,
+so everything (OS, apps, configs, etc.) is exactly as it is now.</font></p>
+<h3 class="western"><font face="Noto Mono">Here’s how to </font><strong><font face="Noto Mono">clone
+your microSD to SSD</font></strong><font face="Noto Mono">:</font></h3>
+<hr/>
+
+<h3 class="western"><strong><font face="Noto Mono">Step 1: Plug in
+both drives</font></strong></h3>
+<ul>
+	<li><p style="margin-bottom: 0in"><font face="Noto Mono">Your Pi
+	should boot from the microSD card as usual. </font>
+	</p></li>
+	<li><p><font face="Noto Mono">Plug the SSD into a USB 3.0 port. </font>
+	</p></li>
+</ul>
+<hr/>
+
+<h3 class="western"><strong><font face="Noto Mono">Step 2: Identify
+drives</font></strong></h3>
+<p><font face="Noto Mono">Run:</font></p>
+<pre class="western" style="margin-bottom: 0.2in"><code class="western"><font face="Noto Mono">lsblk</font></code></pre>
+<ul>
+	<li><p style="margin-bottom: 0in"><font face="Noto Mono">Your
+	</font><strong><font face="Noto Mono">microSD</font></strong><font face="Noto Mono">
+	will likely be </font><code class="western"><font face="Noto Mono">/dev/mmcblk0</font></code><font face="Noto Mono">
+	(with partitions </font><code class="western"><font face="Noto Mono">/dev/mmcblk0p1</font></code><font face="Noto Mono">,
+	</font><code class="western"><font face="Noto Mono">/dev/mmcblk0p2</font></code><font face="Noto Mono">,
+	etc.). </font>
+	</p></li>
+	<li><p><font face="Noto Mono">Your </font><strong><font face="Noto Mono">SSD</font></strong><font face="Noto Mono">
+	will show as </font><code class="western"><font face="Noto Mono">/dev/sda</font></code><font face="Noto Mono">
+	(e.g., </font><code class="western"><font face="Noto Mono">/dev/sda1</font></code><font face="Noto Mono">,
+	</font><code class="western"><font face="Noto Mono">/dev/sda2</font></code><font face="Noto Mono">,
+	etc.). </font>
+	</p></li>
+</ul>
+<hr/>
+
+<h3 class="western"><strong><font face="Noto Mono">Step 3: Clone with
+</font></strong><strong><code class="western"><font face="Noto Mono">rsync</font></code></strong></h3>
+<h4 class="western"><font face="Noto Mono">1. First, format the SSD
+using </font><code class="western"><font face="Noto Mono">gparted</font></code><font face="Noto Mono">
+or </font><code class="western"><font face="Noto Mono">fdisk</font></code><font face="Noto Mono">
+if it's blank, then create two partitions:</font></h4>
+<ul>
+	<li><p style="margin-bottom: 0in"><strong><font face="Noto Mono">boot</font></strong><font face="Noto Mono">
+	partition (FAT32, about 256MB or match microSD’s </font><code class="western"><font face="Noto Mono">/boot</font></code><font face="Noto Mono">)
+	</font>
+	</p></li>
+	<li><p><strong><font face="Noto Mono">root</font></strong><font face="Noto Mono">
+	partition (ext4, uses the rest of the space) </font>
+	</p></li>
+</ul>
+<h4 class="western"><font face="Noto Mono">2. Mount both SSD
+partitions:</font></h4>
+<pre class="western"><code class="western"><font face="Noto Mono">sudo mkdir /mnt/ssdboot /mnt/ssdroot</font></code>
+<code class="western"><font face="Noto Mono">sudo mount /dev/sda1 /mnt/ssdboot</font></code>
+<code class="western"><font face="Noto Mono">sudo mount /dev/sda2 /mnt/ssdroot</font></code></pre><h4 class="western">
+<font face="Noto Mono">3. Mount your running system's boot:</font></h4>
+<pre class="western" style="margin-bottom: 0.2in"><code class="western"><font face="Noto Mono">sudo mount /boot /mnt/boot</font></code></pre><h4 class="western">
+<font face="Noto Mono">4. Clone </font><code class="western"><font face="Noto Mono">/boot</font></code><font face="Noto Mono">:</font></h4>
+<pre class="western" style="margin-bottom: 0.2in"><code class="western"><font face="Noto Mono">sudo rsync -avx /mnt/boot/ /mnt/ssdboot/</font></code></pre><h4 class="western">
+<font face="Noto Mono">5. Clone root (</font><code class="western"><font face="Noto Mono">/</font></code><font face="Noto Mono">):</font></h4>
+<pre class="western" style="margin-bottom: 0.2in"><code class="western"><font face="Noto Mono">sudo rsync -axv --exclude={&quot;/dev/*&quot;,&quot;/proc/*&quot;,&quot;/sys/*&quot;,&quot;/tmp/*&quot;,&quot;/run/*&quot;,&quot;/mnt/*&quot;,&quot;/media/*&quot;,&quot;/lost+found&quot;} / /mnt/ssdroot/</font></code></pre><blockquote>
+<font face="Noto Mono">This keeps permissions and links intact.</font></blockquote>
+<hr/>
+
+<h3 class="western"><strong><font face="Noto Mono">Step 4: Adjust the
+SSD’s </font></strong><strong><code class="western"><font face="Noto Mono">/etc/fstab</font></code></strong></h3>
+<ol>
+	<li><p><font face="Noto Mono">Edit </font><code class="western"><font face="Noto Mono">/mnt/ssdroot/etc/fstab</font></code><font face="Noto Mono">:
+	</font>
+	</p></li>
+</ol>
+<ol>
+	<li><pre class="western" style="margin-bottom: 0.2in"><code class="western"><font face="Noto Mono">sudo nano /mnt/ssdroot/etc/fstab</font></code></pre></li>
+	<li><p><font face="Noto Mono">Replace </font><code class="western"><font face="Noto Mono">/dev/mmcblk0p1</font></code><font face="Noto Mono">
+	and </font><code class="western"><font face="Noto Mono">/dev/mmcblk0p2</font></code><font face="Noto Mono">
+	with </font><code class="western"><font face="Noto Mono">/dev/sda1</font></code><font face="Noto Mono">
+	and </font><code class="western"><font face="Noto Mono">/dev/sda2</font></code><font face="Noto Mono">,
+	respectively. </font>
+	</p></li>
+</ol>
+<hr/>
+
+<h3 class="western"><strong><font face="Noto Mono">Step 5: Fix
+</font></strong><strong><code class="western"><font face="Noto Mono">cmdline.txt</font></code></strong></h3>
+<p><font face="Noto Mono">Edit </font><code class="western"><font face="Noto Mono">/mnt/ssdboot/cmdline.txt</font></code><font face="Noto Mono">:</font></p>
+<pre class="western" style="margin-bottom: 0.2in"><code class="western"><font face="Noto Mono">sudo nano /mnt/ssdboot/cmdline.txt</font></code></pre><p>
+<font face="Noto Mono">Change:</font></p>
+<pre class="western" style="margin-bottom: 0.2in"><code class="western"><font face="Noto Mono">root=/dev/mmcblk0p2</font></code></pre><p>
+<font face="Noto Mono">to:</font></p>
+<pre class="western" style="margin-bottom: 0.2in"><code class="western"><font face="Noto Mono">root=/dev/sda2</font></code></pre>
+<hr/>
+
+<h3 class="western"><strong><font face="Noto Mono">Step 6: Reboot</font></strong></h3>
+<ol>
+	<li><p><font face="Noto Mono">Shutdown the Pi: </font>
+	</p></li>
+</ol>
+<ol>
+	<li><pre class="western" style="margin-bottom: 0.2in"><code class="western"><font face="Noto Mono">sudo shutdown now</font></code></pre></li>
+	<li><p style="margin-bottom: 0in"><font face="Noto Mono">Unplug the
+	microSD card. </font>
+	</p></li>
+	<li><p><font face="Noto Mono">Power up with just the SSD plugged in!
+	</font>
+	</p></li>
+</ol>
+<hr/>
+
+<h3 class="western"><strong><font face="Noto Mono">Done!</font></strong></h3>
+<p><font face="Noto Mono">This method will preserve </font><strong><font face="Noto Mono">all
+your installed packages, configs, services</font></strong><font face="Noto Mono">,
+and tweaks. It’s like a 1:1 migration.</font></p>
+<hr/>
+
+<p><font face="Noto Mono">Do you want me to also give you an optional
+step for updating </font><code class="western"><font face="Noto Mono">/etc/fstab</font></code><font face="Noto Mono">
+to use </font><strong><font face="Noto Mono">UUIDs</font></strong><font face="Noto Mono">
+instead of </font><code class="western"><font face="Noto Mono">/dev/sda</font></code><font face="Noto Mono">
+for a more robust setup?</font></p>
+<p><font face="Noto Mono">/Bob</font></p>
+<div id="composer-background" dir="ltr"><p><br/>
+<br/>
+
+	</p>
+	<div id="prompt-textarea" dir="ltr"><p><br/>
+<br/>
+
+		</p>
+	</div>
+</div>
+<p style="margin-bottom: 0in"><font face="Noto Mono">ChatGPT can make
+mistakes. Check important info.</font></p>
+<div id="radix-:r1n:" dir="ltr"><p style="margin-bottom: 0in"><br/>
+
+	</p>
+</div>
+<p><br/>
+<br/>
+
+</p>
+</body>
+</html>

@@ -1,0 +1,48 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Virtual environments
+venv/
+.env/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+anaconda_projects/
+
+# VS Code
+.vscode/
+
+# Pytest and coverage
+.cache/
+.pytest_cache/
+.coverage
+*.cover
+coverage.xml
+
+# Linters / Type checkers
+.mypy_cache/
+pylint-report.txt
+
+# Logs and runtime
+*.log
+*.out
+*.pid
+*.dump
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# dotenv
+.env
