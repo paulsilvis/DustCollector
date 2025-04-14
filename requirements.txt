@@ -1,0 +1,15 @@
+RPLCD
+RPi.GPIO
+smbus2
+adafruit-blinka
+adafruit-circuitpython-neopixel
+Adafruit-PlatformDetect
+Adafruit-PureIO
+pyserial
+numpy
+pyaudio
+pygame
+black
+flake8
+aiofiles
+
