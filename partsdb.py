@@ -83,13 +83,15 @@ def find_entries(db, keywords):
         print("No matches found.")
         return
 
-    max_loc = max((len(e['location']) for _, e in results), default=0)
-    for idx, entry in sorted(results, key=lambda x: x[1]["description"].lower()):
+    max_loc = max((len(entry['location']) for _, entry in results), default=0)
+    for db_index, entry in sorted(results, key=lambda x: x[1]['description'].lower()):
         tag_display = f"{{{', '.join(entry['tag'])}}}" if entry['tag'] else ""
-        print(f"{idx:3}: [{entry['location']:<{max_loc}}] {entry['description']} {tag_display}")
+        print(f"{db_index:3}: [{entry['location']:<{max_loc}}] {entry['description']} {tag_display}")
 
 
 def list_entries(db, sort=True):
+    note = "(Sorted alphabetically)" if sort else "(Original entry order)"
+    print(note)
     if not db:
         print("Database is empty.")
         return
@@ -98,7 +100,10 @@ def list_entries(db, sort=True):
     max_loc = max((len(entry['location']) for entry in entries), default=0)
     for idx, entry in enumerate(entries, start=1):
         tag_display = f"{{{', '.join(entry['tag'])}}}" if entry['tag'] else ""
-        print(f"{idx:3}: [{entry['location']:<{max_loc}}] {entry['description']} {tag_display}")
+        if sort:
+            print(f"[{entry['location']:<{max_loc}}] {entry['description']} {tag_display}")
+        else:
+            print(f"{idx:3}: [{entry['location']:<{max_loc}}] {entry['description']} {tag_display}")
 
 
 def delete_entry(db, num_str):
@@ -148,7 +153,11 @@ def edit_entry(db, num_str):
     print(f"Updated entry:\n[{new_location}] {new_description} {{{', '.join(new_tags)}}}")
     confirm = prompt("Confirm update (y/n)? ").strip().lower()
     if confirm == "y":
-        db[num - 1] = {"location": new_location, "description": new_description, "tag": new_tags}
+        db[num - 1] = {
+            "location": new_location,
+            "description": new_description,
+            "tag": new_tags,
+        }
         print("Entry updated.")
         return True
     print("Edit cancelled.")
@@ -170,7 +179,7 @@ Add an entry:
 
 List entries:
   l                     # list all entries alphabetically
-  ls                    # list entries unsorted
+  li                    # list entries in original order
 
 Find entries:
   f KEYWORDS
@@ -180,6 +189,7 @@ Edit and delete:
   d NUMBER              # delete an entry
 
 Other:
+  s                     # save database without quitting
   q                     # quit and save
   ? or h or help        # short help
   ? all or help all     # full cheat sheet
@@ -193,11 +203,12 @@ Database: {DB_FILE}
     else:
         print(f"""
 Commands:
+  s                     # save database without quitting
   a LOCATION: DESCRIPTION
   a LOCATION: DESCRIPTION : TAG1, TAG2
   f KEYWORDS
   l                      (list alphabetically)
-  ls                     (list unsorted)
+  li                     (list original order)
   e NUMBER
   d NUMBER
   q
@@ -228,13 +239,17 @@ Simple personal stash database
             cmd = prompt(f"[{DB_FILE}] > ").strip()
             if not cmd:
                 continue
-            if cmd.lower() == "q":
+            if cmd.lower() == "s":
+                save_db(db)
+                dirty = False
+                print("Database saved.")
+            elif cmd.lower() == "q":
                 if dirty:
                     save_db(db)
                 break
             elif cmd.lower() == "l":
                 list_entries(db)
-            elif cmd.lower() == "ls":
+            elif cmd.lower() == "li":
                 list_entries(db, sort=False)
             elif cmd.lower().startswith("a "):
                 add_entry(db, cmd[2:].strip())

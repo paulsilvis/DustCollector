@@ -393,5 +393,35 @@
     "location": "box3",
     "description": "20x4 LCD screens",
     "tag": []
+  },
+  {
+    "location": "box4",
+    "description": "rs232-usb cables",
+    "tag": []
+  },
+  {
+    "location": "box6",
+    "description": "jeanoko drv8825 carrier boards",
+    "tag": []
+  },
+  {
+    "location": "box6",
+    "description": "esp32 expansion board plus esb32",
+    "tag": []
+  },
+  {
+    "location": "box5",
+    "description": "espressif development board for esp32",
+    "tag": []
+  },
+  {
+    "location": "box5",
+    "description": "usb-c cables",
+    "tag": []
+  },
+  {
+    "location": "box5",
+    "description": "usb fan",
+    "tag": []
   }
 ]
