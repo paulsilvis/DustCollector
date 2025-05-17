@@ -165,6 +165,9 @@ def edit_entry(db, num_str):
 
 
 def print_help(extended=False):
+    print("""
+  locations              # list all known locations
+""") if not extended else None
     if extended:
         print(f"""
 STASH COMMAND CHEAT SHEET
@@ -179,6 +182,7 @@ Add an entry:
 
 List entries:
   l                     # list all entries alphabetically
+  l LOCATION            # list entries where LOCATION is partially matched (case-insensitive)
   li                    # list entries in original order
 
 Find entries:
@@ -209,6 +213,7 @@ Commands:
   f KEYWORDS
   l                      (list alphabetically)
   li                     (list original order)
+  l LOCATION             (list entries where LOCATION is partially matched (case-insensitive))
   e NUMBER
   d NUMBER
   q
@@ -264,7 +269,22 @@ Simple personal stash database
                     dirty = True
             elif cmd.lower() in ("? all", "help all"):
                 print_help(extended=True)
-            elif cmd.lower() in ("?", "h", "help"):
+            elif cmd.lower().startswith("l "):
+                loc_keyword = cmd[2:].strip().lower()
+                matches = [entry for entry in db if loc_keyword in entry['location'].lower()]
+                if not matches:
+                    print(f"No entries found with location containing '{loc_keyword}'.")
+                else:
+                    max_loc = max((len(e['location']) for e in matches), default=0)
+                    for entry in matches:
+                        tag_display = f"{{{', '.join(entry['tag'])}}}" if entry['tag'] else ""
+                        print(f"[{entry['location']:<{max_loc}}] {entry['description']} {tag_display}")
+            elif cmd.lower() == "locations":
+                locs = sorted(set(entry['location'] for entry in db if entry['location']))
+                print("Locations:")
+                for loc in locs:
+                    print(f"  {loc}")
+            elif cmd.lower() in ("?", "h", "help"): 
                 print_help()
             else:
                 print("Unknown command. Use '?' to see available commands.")
