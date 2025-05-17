@@ -1,0 +1,397 @@
+[
+  {
+    "location": "tray1",
+    "description": "small pir SR505 sensors",
+    "tag": []
+  },
+  {
+    "location": "tray1",
+    "description": "small speakers for theremin",
+    "tag": []
+  },
+  {
+    "location": "tray1",
+    "description": "TP4056 type-c charger module",
+    "tag": []
+  },
+  {
+    "location": "tray1",
+    "description": "HC-SR04 ultrasonic distance sensors",
+    "tag": []
+  },
+  {
+    "location": "tray1",
+    "description": "parallax 29132 sound impact sensor",
+    "tag": []
+  },
+  {
+    "location": "tray1",
+    "description": "LM386 audio amplifier",
+    "tag": []
+  },
+  {
+    "location": "tray1",
+    "description": "RTC clock module",
+    "tag": []
+  },
+  {
+    "location": "tray1",
+    "description": "vibration sensor",
+    "tag": []
+  },
+  {
+    "location": "tray1",
+    "description": "esp32 CAM",
+    "tag": [
+      "cam",
+      "camera"
+    ]
+  },
+  {
+    "location": "tray1",
+    "description": "raspberry pi pico",
+    "tag": []
+  },
+  {
+    "location": "tray1",
+    "description": "ESP32-WROOM-32U core board",
+    "tag": []
+  },
+  {
+    "location": "tray1",
+    "description": "2 inch LCD module st7789v controller",
+    "tag": []
+  },
+  {
+    "location": "tray1",
+    "description": "max98306 stereo amplifier",
+    "tag": []
+  },
+  {
+    "location": "tray1",
+    "description": "Adafruit TCA9548A 1-to-8 I2C Multiplexer Breakout",
+    "tag": []
+  },
+  {
+    "location": "tray1",
+    "description": "I2C expansion board",
+    "tag": []
+  },
+  {
+    "location": "tray1",
+    "description": "3.7V 12mA battery",
+    "tag": []
+  },
+  {
+    "location": "tray1",
+    "description": "LD2420 Radar Sensor Module 24GHz ISM Human Body Micromotion Millimeter Wave Radar Sensor Module AIOT Smart Home 8M 3.3V 50A",
+    "tag": []
+  },
+  {
+    "location": "tray1",
+    "description": "voltage display small 2-wire",
+    "tag": []
+  },
+  {
+    "location": "tray2",
+    "description": "terminal blocks",
+    "tag": []
+  },
+  {
+    "location": "tray2",
+    "description": "SW-420 Normally Close Vibration Sensor Vibration Switch Alarm Module Compatible Arduino",
+    "tag": []
+  },
+  {
+    "location": "tray2",
+    "description": "gyro accelerometer",
+    "tag": []
+  },
+  {
+    "location": "tray2",
+    "description": "voltage regulator 3.3V 950mA LD1117v33",
+    "tag": []
+  },
+  {
+    "location": "tray2",
+    "description": "Makerfocus 4pcs ESP8266 Esp-01 Serial Wireless Wifi Transceiver Module Compatible with Arduino",
+    "tag": []
+  },
+  {
+    "location": "tray2",
+    "description": "100uF 25V capacitors",
+    "tag": []
+  },
+  {
+    "location": "tray2",
+    "description": "Vl530X time-of-flight sensor",
+    "tag": []
+  },
+  {
+    "location": "tray2",
+    "description": "0.1 uF capacitors",
+    "tag": []
+  },
+  {
+    "location": "tray2",
+    "description": "small jumper 2-pin for dupont pins",
+    "tag": []
+  },
+  {
+    "location": "tray2",
+    "description": "small 5V 0.11A fans",
+    "tag": []
+  },
+  {
+    "location": "tray2",
+    "description": "espressif ESP-prog",
+    "tag": []
+  },
+  {
+    "location": "tray2",
+    "description": "Diymore 20pcs DS18B20 18B20 TO-92 3 Pins Wire Digital Thermometer Temperature IC Sensor",
+    "tag": []
+  },
+  {
+    "location": "tray2",
+    "description": "battery holder 18650",
+    "tag": []
+  },
+  {
+    "location": "tray2",
+    "description": "small heat sinks",
+    "tag": []
+  },
+  {
+    "location": "tray2",
+    "description": "mounting brackets for ultrasonic sensors",
+    "tag": []
+  },
+  {
+    "location": "tray2",
+    "description": "10 uF capacitors",
+    "tag": []
+  },
+  {
+    "location": "tray2",
+    "description": "ultrasonic distance sensors",
+    "tag": []
+  },
+  {
+    "location": "tray3",
+    "description": "vibration sensor / bare 2-pin strain gauge",
+    "tag": []
+  },
+  {
+    "location": "tray3",
+    "description": "tmc2209 stepper driver",
+    "tag": []
+  },
+  {
+    "location": "tray3",
+    "description": "mcp23017 I/O expansion board",
+    "tag": []
+  },
+  {
+    "location": "tray4",
+    "description": "on/off rocker switches",
+    "tag": []
+  },
+  {
+    "location": "tray4",
+    "description": "reversing toggle switches",
+    "tag": []
+  },
+  {
+    "location": "tray4",
+    "description": "small 3-pin dual in-line slide switches",
+    "tag": []
+  },
+  {
+    "location": "tray4",
+    "description": "small momentary contact switches",
+    "tag": []
+  },
+  {
+    "location": "tray4",
+    "description": "large and small microswitches with rollers",
+    "tag": []
+  },
+  {
+    "location": "tray4",
+    "description": "small on/off toggle switches",
+    "tag": []
+  },
+  {
+    "location": "tray4",
+    "description": "thin reversing rocker switches",
+    "tag": []
+  },
+  {
+    "location": "tray4",
+    "description": "potentiometer -- large",
+    "tag": []
+  },
+  {
+    "location": "tray4",
+    "description": "potentiometers -- small",
+    "tag": []
+  },
+  {
+    "location": "tray4",
+    "description": "74hc165 parallel in / serial out shift registers",
+    "tag": []
+  },
+  {
+    "location": "tray3",
+    "description": "RYLR998 UART Interface 868/915 MHz Lora Module with Antenna FCC CE NCC Certification",
+    "tag": []
+  },
+  {
+    "location": "tray3",
+    "description": "voltage display small 3-wire",
+    "tag": []
+  },
+  {
+    "location": "tray3",
+    "description": "small terminals - red",
+    "tag": []
+  },
+  {
+    "location": "tray3",
+    "description": "small terminals - white",
+    "tag": []
+  },
+  {
+    "location": "tray3",
+    "description": "small terminals - black",
+    "tag": []
+  },
+  {
+    "location": "tray3",
+    "description": "small glass fuses -- F10A, F15A",
+    "tag": []
+  },
+  {
+    "location": "tray3",
+    "description": "small terminals - yellow",
+    "tag": []
+  },
+  {
+    "location": "tray5",
+    "description": "large PIR sensors",
+    "tag": [
+      "5pcs HC-SR501 PIR Infrared Motion Sensor"
+    ]
+  },
+  {
+    "location": "tray5",
+    "description": "double 5V DC --> 10A 250V AC relay module",
+    "tag": []
+  },
+  {
+    "location": "tray5",
+    "description": "plantower air quality Laser Power PM 2.5 G1 PMS1003 Sensor Laser dust Sensor",
+    "tag": []
+  },
+  {
+    "location": "tray5",
+    "description": "coupler -- splined, for servo motor, 1/4\" bore",
+    "tag": []
+  },
+  {
+    "location": "tray5",
+    "description": "5 Pcs 0.96 Inch OLED I2C IIC Display Module 12864 128x64 Pixel SSD1306 Mini Self-Luminous OLED Screen Board Compatible with Arduino Raspberry Pi(Blue and Yellow)",
+    "tag": []
+  },
+  {
+    "location": "tray5",
+    "description": "small zip-ties",
+    "tag": []
+  },
+  {
+    "location": "tray5",
+    "description": "small dc motors 1.5 - 3V",
+    "tag": []
+  },
+  {
+    "location": "tray5",
+    "description": "small pumps 4.8V DC",
+    "tag": []
+  },
+  {
+    "location": "tray5",
+    "description": "DIY LED U-Home 3Pcs DC3V-35V DC 3V 6V 12V 24V 35V Variable Voltage Regulator 5A PWM Speed Controller Switch Dimmer for DIY LED Panel Light Single Color LED Strip Light SMD5050/SMD5630/SMD3528",
+    "tag": []
+  },
+  {
+    "location": "tray5",
+    "description": "relay media.digikey.com/pdf/Data%20Sheets/Tyco%20Electronics%20P%20B%20PDFs/OMI%202%20Pole.pdf",
+    "tag": []
+  },
+  {
+    "location": "tray6",
+    "description": "ADS1115 4-channel adc converter",
+    "tag": []
+  },
+  {
+    "location": "tray6",
+    "description": "small speakers",
+    "tag": []
+  },
+  {
+    "location": "tray6",
+    "description": "piezo buzzer 6V",
+    "tag": []
+  },
+  {
+    "location": "tray6",
+    "description": "piezo buzzer 4-28V",
+    "tag": []
+  },
+  {
+    "location": "tray6",
+    "description": "GX12-3 connectors with waterproof cap",
+    "tag": []
+  },
+  {
+    "location": "box1",
+    "description": "solar panels -- Micro Solar Panels with Wire, 5PCS 5V 200mA Photovoltaic Solar Cells Kit 110mmx60mm / 4.33''x 2.36''",
+    "tag": []
+  },
+  {
+    "location": "box2",
+    "description": "IN4148 switching diodes 200 mA",
+    "tag": []
+  },
+  {
+    "location": "box2",
+    "description": "resistor pack -- all sizes -- Aniann 1280 Pieces 64 Values Resistor Kit, 1% Assorted Resistors 1 Ohm-10M Ohm 1/4W Metal Film Resistors",
+    "tag": []
+  },
+  {
+    "location": "box3",
+    "description": "3-color LEDs",
+    "tag": []
+  },
+  {
+    "location": "box2",
+    "description": "multi-color LED assortment",
+    "tag": []
+  },
+  {
+    "location": "tray7",
+    "description": "GX 16-2 connectors",
+    "tag": []
+  },
+  {
+    "location": "box3",
+    "description": "arduino boards",
+    "tag": []
+  },
+  {
+    "location": "box3",
+    "description": "20x4 LCD screens",
+    "tag": []
+  }
+]
