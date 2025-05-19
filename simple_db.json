@@ -423,5 +423,505 @@
     "location": "box5",
     "description": "usb fan",
     "tag": []
+  },
+  {
+    "location": "box6",
+    "description": "jeanoko drv8825 carrier board",
+    "tag": []
+  },
+  {
+    "location": "box6",
+    "description": "esp32 expansion board and esp32",
+    "tag": []
+  },
+  {
+    "location": "black1",
+    "description": "solid wire several colors",
+    "tag": []
+  },
+  {
+    "location": "black1",
+    "description": "solder and flux",
+    "tag": []
+  },
+  {
+    "location": "black2",
+    "description": "2pc 20x4 LCD display",
+    "tag": []
+  },
+  {
+    "location": "black2",
+    "description": "2 pc solid-state relay",
+    "tag": []
+  },
+  {
+    "location": "black2",
+    "description": "bunch of 16-pin chip carriers",
+    "tag": []
+  },
+  {
+    "location": "blue1",
+    "description": "round rocker spst switches",
+    "tag": []
+  },
+  {
+    "location": "blue1",
+    "description": "20Kg servo motor",
+    "tag": []
+  },
+  {
+    "location": "blue1",
+    "description": "lots of small  green terminal blocks",
+    "tag": []
+  },
+  {
+    "location": "blue1",
+    "description": "RPi IO breakout board",
+    "tag": []
+  },
+  {
+    "location": "blue1",
+    "description": "diy LED breakout board with 5 LEDs",
+    "tag": []
+  },
+  {
+    "location": "blue1",
+    "description": "1 usb fan",
+    "tag": []
+  },
+  {
+    "location": "blue1",
+    "description": "db 25 serial connector breakout board",
+    "tag": []
+  },
+  {
+    "location": "blue1",
+    "description": "1 lighted on/off rocker switch",
+    "tag": []
+  },
+  {
+    "location": "blue1",
+    "description": "powered usb expansion hub (minus power)",
+    "tag": []
+  },
+  {
+    "location": "blue2",
+    "description": "rolls of colored tape red/black/blue/orange/white/brown/green/yellow/gray",
+    "tag": []
+  },
+  {
+    "location": "blue2",
+    "description": "solder",
+    "tag": []
+  },
+  {
+    "location": "blue2",
+    "description": "1 pkg 3-pin dupont short cables",
+    "tag": []
+  },
+  {
+    "location": "blue2",
+    "description": "1 pkg 4-pin dupont short cables",
+    "tag": []
+  },
+  {
+    "location": "blue2",
+    "description": "1 usb fan/blower",
+    "tag": []
+  },
+  {
+    "location": "blue2",
+    "description": "white nailed cable clips clamps",
+    "tag": []
+  },
+  {
+    "location": "blue2",
+    "description": "gx 16-6 connectors (2)",
+    "tag": []
+  },
+  {
+    "location": "blue2",
+    "description": "mountable fuse holders (2)",
+    "tag": []
+  },
+  {
+    "location": "black3",
+    "description": "i2c digital i/o expander, base adrs 0x20 (5 pcs)",
+    "tag": []
+  },
+  {
+    "location": "black3",
+    "description": "tmc2209 unknown status",
+    "tag": []
+  },
+  {
+    "location": "black3",
+    "description": "oled display, unknown status",
+    "tag": []
+  },
+  {
+    "location": "black3",
+    "description": "drv8825 stepper driver chips",
+    "tag": []
+  },
+  {
+    "location": "black3",
+    "description": "tmc2209 stepper driver chips, 6 pcs new",
+    "tag": []
+  },
+  {
+    "location": "black3",
+    "description": "thermal glue",
+    "tag": []
+  },
+  {
+    "location": "black4",
+    "description": "sticky cable clips (black)",
+    "tag": []
+  },
+  {
+    "location": "black4",
+    "description": "small tie-wraps, two lengths",
+    "tag": []
+  },
+  {
+    "location": "black4",
+    "description": "rack for pinions on blast gates (5+)",
+    "tag": []
+  },
+  {
+    "location": "black4",
+    "description": "gikfun proto boards perf",
+    "tag": []
+  },
+  {
+    "location": "black4",
+    "description": "microsd cards and adapters",
+    "tag": []
+  },
+  {
+    "location": "clear1",
+    "description": "connector shorts, some waterproof/marine",
+    "tag": []
+  },
+  {
+    "location": "a clear1",
+    "description": "solar panel, 7V 200mA",
+    "tag": []
+  },
+  {
+    "location": "clear1",
+    "description": "5 inch computer fan",
+    "tag": []
+  },
+  {
+    "location": "clear1",
+    "description": "5V 2500mA power supply",
+    "tag": []
+  },
+  {
+    "location": "clear1",
+    "description": "4 pcs 5\" by 7\" clear acrylic 1/8\" thick",
+    "tag": []
+  },
+  {
+    "location": "clear1",
+    "description": "tie-wraps, large and small, multiple colors",
+    "tag": []
+  },
+  {
+    "location": "clear1",
+    "description": "audio cables - 2 pcs",
+    "tag": []
+  },
+  {
+    "location": "clear2",
+    "description": "cat5e cable, 100 ft",
+    "tag": []
+  },
+  {
+    "location": "clear2",
+    "description": "old usb camera",
+    "tag": []
+  },
+  {
+    "location": "clear2",
+    "description": "1/4 and 1/2 inch wire loom",
+    "tag": []
+  },
+  {
+    "location": "clear2",
+    "description": "LED light strip and controller",
+    "tag": []
+  },
+  {
+    "location": "clear2",
+    "description": "fairly new USB camera in box",
+    "tag": []
+  },
+  {
+    "location": "clear3",
+    "description": "Eiechip dc to dc Step up Converter DC Voltage Regulator Voltage Converter Step Up dc Boost Converter USB Power Module Supply Module 2V-24V to 5V-28V 2A MT3608 Mico USB (Pack of 10)",
+    "tag": []
+  },
+  {
+    "location": "clear3",
+    "description": "misc perfboard / veroboard pieces",
+    "tag": []
+  },
+  {
+    "location": "clear3",
+    "description": "misc dupont headers",
+    "tag": []
+  },
+  {
+    "location": "clear3",
+    "description": "misc green terminal pcb blocks",
+    "tag": []
+  },
+  {
+    "location": "clear3",
+    "description": "a/d chip multiplexer",
+    "tag": []
+  },
+  {
+    "location": "clear3",
+    "description": "40pcs(20pcs LM358+20pcs 8P IC Block) Precision Dual Operational Amplifier 3V to 32 V,8-Pin",
+    "tag": []
+  },
+  {
+    "location": "clear3",
+    "description": "25 pin db25 breakout board / connector (female)",
+    "tag": []
+  },
+  {
+    "location": "clear3",
+    "description": "25 pin db25 connectors (male)",
+    "tag": []
+  },
+  {
+    "location": "clear3",
+    "description": "u-shaped terminal block connectors crimped",
+    "tag": []
+  },
+  {
+    "location": "clear3",
+    "description": "pinion gears for stepper motors",
+    "tag": []
+  },
+  {
+    "location": "clear3",
+    "description": "75hc595 serial-in/parallel-out shift registers 16-pin",
+    "tag": []
+  },
+  {
+    "location": "clear3",
+    "description": "16-pin chip holders for perfboard",
+    "tag": []
+  },
+  {
+    "location": "clear3",
+    "description": "3 pcs large microswitches (red) with rollers",
+    "tag": []
+  },
+  {
+    "location": "clear3",
+    "description": "small box of various heat-shring tubes",
+    "tag": []
+  },
+  {
+    "location": "clear3",
+    "description": "large yellow/black emergency shutoff switch",
+    "tag": []
+  },
+  {
+    "location": "clear4",
+    "description": "box of metric socket head cap screws",
+    "tag": []
+  },
+  {
+    "location": "clear4",
+    "description": "box of m3 standoffs",
+    "tag": []
+  },
+  {
+    "location": "clear4",
+    "description": "box of pre-bent trimmed jumpers for perfboard/breadboard/veroboard",
+    "tag": []
+  },
+  {
+    "location": "clear4",
+    "description": "box of m2.5 standoffs",
+    "tag": []
+  },
+  {
+    "location": "clear4",
+    "description": "box of 750 pcs black carbon steel phillips pan head small self tapping screws",
+    "tag": []
+  },
+  {
+    "location": "clear4",
+    "description": "box of 620 pcs m3 hex socket head cap screws / bolts",
+    "tag": []
+  },
+  {
+    "location": "clear4",
+    "description": "box of 260 pcs m3 standoffs",
+    "tag": []
+  },
+  {
+    "location": "clear4",
+    "description": "small box of large shrink-wrap tubes",
+    "tag": []
+  },
+  {
+    "location": "clear4",
+    "description": "box of various size solder seal wire connectors 24-awg to 10-awg",
+    "tag": []
+  },
+  {
+    "location": "clear4",
+    "description": "3.3V power supply, not corded, terminal block connection",
+    "tag": []
+  },
+  {
+    "location": "clear5",
+    "description": "dupont connector kit and crimper",
+    "tag": []
+  },
+  {
+    "location": "clear5",
+    "description": "colored shrink-wrap tubing",
+    "tag": []
+  },
+  {
+    "location": "clear5",
+    "description": "2 small servo motors",
+    "tag": []
+  },
+  {
+    "location": "clear5",
+    "description": "break-beam sensor",
+    "tag": []
+  },
+  {
+    "location": "clear5",
+    "description": "baomain break-beam sensor reflective (reflector missing)",
+    "tag": []
+  },
+  {
+    "location": "clear5",
+    "description": "wrapit cable labels velcro large",
+    "tag": []
+  },
+  {
+    "location": "flat1",
+    "description": "2 5V pc fans 5\"",
+    "tag": []
+  },
+  {
+    "location": "flat1",
+    "description": "was '3pcs Nema 17 Stepper Motor 23MM Bipolar 1A 13Ncm (18.41oz.in) 42 Motors 1.8 De\ngree 2 Phase 4-Lead Nema17 Motor with 1m Cable and Connector for DIY CNC 3D Printer, 1.66 * 1.66 * 0\n.91inch'",
+    "tag": []
+  },
+  {
+    "location": "flat1",
+    "description": "dymo labeler refills (some color)",
+    "tag": []
+  },
+  {
+    "location": "flat1",
+    "description": "small numbered wire marker book",
+    "tag": []
+  },
+  {
+    "location": "flat1",
+    "description": "precision anti-static tweazers",
+    "tag": []
+  },
+  {
+    "location": "flat1",
+    "description": "heavy-duty crimpers for household wiring",
+    "tag": []
+  },
+  {
+    "location": "flat1",
+    "description": "screws for mounting pc fans 5\" 5V",
+    "tag": []
+  },
+  {
+    "location": "flat2",
+    "description": "4 pcs 18650 battery",
+    "tag": []
+  },
+  {
+    "location": "flat2",
+    "description": "4-slot 18650 battery charger",
+    "tag": []
+  },
+  {
+    "location": "flat2",
+    "description": "misc usb c cables",
+    "tag": []
+  },
+  {
+    "location": "box7",
+    "description": "round ferrules various sizes 1700 pcs and crimper",
+    "tag": []
+  },
+  {
+    "location": "box7",
+    "description": "grey plastic enclosure for silent witness project",
+    "tag": []
+  },
+  {
+    "location": "box7",
+    "description": "ribbon cable for raspberry pi breakout board",
+    "tag": []
+  },
+  {
+    "location": "box7",
+    "description": "2 pcs 16x4 LCD display i2c",
+    "tag": []
+  },
+  {
+    "location": "box7",
+    "description": "1 box multi-color red green blue LEDs",
+    "tag": []
+  },
+  {
+    "location": "box7",
+    "description": "1 pc Makerfocus 4pcs ESP8266 Esp-01 Serial Wireless Wifi Transceiver Module Compatible with Arduino",
+    "tag": []
+  },
+  {
+    "location": "box7",
+    "description": "misc short jumpers, clip wires, dupont and other connector",
+    "tag": []
+  },
+  {
+    "location": "box7",
+    "description": "lot of 220 Ohm resistors",
+    "tag": []
+  },
+  {
+    "location": "box7",
+    "description": "plastic case for arduino?",
+    "tag": []
+  },
+  {
+    "location": "box7",
+    "description": "mounting brackets for nema 17 stepper motors",
+    "tag": []
+  },
+  {
+    "location": "box7",
+    "description": "small usb camera, velcro mount",
+    "tag": []
+  },
+  {
+    "location": "box7",
+    "description": "miscellaneous hodgepodge of jumper wires, clips, connectors and crap",
+    "tag": []
   }
 ]
