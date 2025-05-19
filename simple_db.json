@@ -921,7 +921,27 @@
   },
   {
     "location": "box7",
-    "description": "miscellaneous hodgepodge of jumper wires, clips, connectors and crap",
+    "description": "miscellaneous hodgepodge of jumper wires, clips, connectors and other crap",
+    "tag": []
+  },
+  {
+    "location": "box7",
+    "description": "foobar",
+    "tag": []
+  },
+  {
+    "location": "box7",
+    "description": "barfoo",
+    "tag": []
+  },
+  {
+    "location": "box7",
+    "description": "foofoo",
+    "tag": []
+  },
+  {
+    "location": "box7",
+    "description": "foo foofoo",
     "tag": []
   }
 ]

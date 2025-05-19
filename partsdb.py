@@ -16,7 +16,8 @@ import sys
 import json
 import shlex
 import shutil
-from prompt_toolkit import prompt
+from prompt_toolkit import prompt, PromptSession
+from prompt_toolkit.patch_stdout import patch_stdout
 
 DB_FILE = "simple_db.json"
 BACKUP_FILE = "simple_db_backup.json"
@@ -120,8 +121,8 @@ def delete_entry(db, num_str):
     entry = db[num - 1]
     print(f"Delete this entry?\n{num}: [{entry['location']}] {entry['description']} "
           f"{{{', '.join(entry['tag'])}}}")
-    confirm = prompt("Confirm delete (y/n)? ").strip().lower()
-    if confirm == "y":
+    confirm = prompt("Confirm delete (Y/n)? ").strip().lower()
+    if confirm in ("", "y", "yes"):
         del db[num - 1]
         print("Entry deleted.")
         return True
@@ -144,15 +145,15 @@ def edit_entry(db, num_str):
     print(f"Editing entry:\n{num}: [{entry['location']}] {entry['description']} "
           f"{{{', '.join(entry['tag'])}}}")
 
-    new_location = prompt(f"New location (was '{entry['location']}'): ").strip() or entry['location']
-    new_description = prompt(f"New description (was '{entry['description']}'): ").strip() or entry['description']
-    new_tag_input = prompt(f"New tags comma-separated (was '{', '.join(entry['tag'])}'): ").strip()
+    new_location = prompt("New location: ", default=entry['location'])
+    new_description = prompt("New description: ", default=entry['description'])
+    new_tag_input = prompt("New tags comma-separated: ", default=", ".join(entry['tag']))
 
     new_tags = [t.strip() for t in new_tag_input.split(",") if t.strip()] if new_tag_input else entry['tag']
 
     print(f"Updated entry:\n[{new_location}] {new_description} {{{', '.join(new_tags)}}}")
-    confirm = prompt("Confirm update (y/n)? ").strip().lower()
-    if confirm == "y":
+    confirm = prompt("Confirm update (Y/n)? ").strip().lower()
+    if confirm in ("", "y", "yes"):
         db[num - 1] = {
             "location": new_location,
             "description": new_description,
@@ -238,10 +239,14 @@ Simple personal stash database
 
     db = load_db()
     dirty = False
+    last_location = None
+    session = PromptSession()
+    dirty = False
 
     while True:
         try:
-            cmd = prompt(f"[{DB_FILE}] > ").strip()
+            with patch_stdout():
+                cmd = session.prompt(f"[{DB_FILE}] > ").strip()
             if not cmd:
                 continue
             if cmd.lower() == "s":
@@ -257,8 +262,23 @@ Simple personal stash database
             elif cmd.lower() == "li":
                 list_entries(db, sort=False)
             elif cmd.lower().startswith("a "):
-                add_entry(db, cmd[2:].strip())
+                arg = cmd[2:].strip()
+                if arg.startswith("."):
+                    if last_location:
+                        rest = arg[1:].lstrip(": ").strip()
+                        raw_input = f"{last_location}: {rest}"
+                    else:
+                        print("No recent location found. Please use full syntax.")
+                        continue
+                else:
+                    raw_input = arg
+                add_entry(db, raw_input)
+                parts = [p.strip() for p in raw_input.split(":")]
+                if len(parts) >= 2:
+                    last_location = parts[0]
                 dirty = True
+
+
             elif cmd.lower().startswith("f "):
                 find_entries(db, shlex.split(cmd[2:].strip()))
             elif cmd.lower().startswith("d "):
