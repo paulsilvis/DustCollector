@@ -24,6 +24,8 @@ anaconda_projects/
 # VS Code
 .vscode/
 
+vl53l0x-python
+
 # Pytest and coverage
 .cache/
 .pytest_cache/
