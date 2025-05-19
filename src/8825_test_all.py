@@ -12,7 +12,9 @@ STEP_INTERVAL_SEC = 60 / (RPM * STEPS_PER_REV)
 
 print(f"Step interval: {STEP_INTERVAL_SEC:.8f} sec")
 
-atexit.register(GPIO.cleanup)
+dist = Distributor()
+atexit.register(dist.close)
+
 
 def move_motors(dist, motors, direction):
     for motor in motors:
@@ -25,6 +27,7 @@ def move_motors(dist, motors, direction):
 
 def main():
 	dist = Distributor()
+	dist.reset()
 	while True:
 		# Enable all motors
 		for motor in MOTORS:

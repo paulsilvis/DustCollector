@@ -3,7 +3,7 @@ from distributor import Distributor
 import atexit
 import RPi.GPIO as GPIO
 
-MOTOR = 2
+MOTOR = 1
 RPM = 60
 STEPS_PER_REV = 200
 STEP_INTERVAL_SEC = 60 / (RPM * STEPS_PER_REV) 
