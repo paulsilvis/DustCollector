@@ -933,5 +933,80 @@
     "location": "clear7",
     "description": "dc power connectors",
     "tag": []
+  },
+  {
+    "location": "clear8",
+    "description": "battery charger, li-ion",
+    "tag": []
+  },
+  {
+    "location": "flat3",
+    "description": "battery charger, 18650",
+    "tag": []
+  },
+  {
+    "location": "flat3",
+    "description": "radar module",
+    "tag": []
+  },
+  {
+    "location": "flat3",
+    "description": "attiny",
+    "tag": []
+  },
+  {
+    "location": "flat3",
+    "description": "3.7V small batter rechargeable",
+    "tag": []
+  },
+  {
+    "location": "flat3",
+    "description": "microphone, small",
+    "tag": []
+  },
+  {
+    "location": "flat3",
+    "description": "top of arduino case?",
+    "tag": []
+  },
+  {
+    "location": "flat3",
+    "description": "9V ac/dc adapter",
+    "tag": []
+  },
+  {
+    "location": "flat3",
+    "description": "some small battery stuff",
+    "tag": []
+  },
+  {
+    "location": "flat3",
+    "description": "solar panel, unknown voltage spec",
+    "tag": []
+  },
+  {
+    "location": "flat3",
+    "description": "1k/2 w 47Ohm resistor pack",
+    "tag": []
+  },
+  {
+    "location": "flat3",
+    "description": "large assortment of labeled resistors",
+    "tag": []
+  },
+  {
+    "location": "flat3",
+    "description": "pir sensors (2)",
+    "tag": []
+  },
+  {
+    "location": "flat3",
+    "description": "small suction mounted swivel, purpose unknown",
+    "tag": []
+  },
+  {
+    "location": "flat3",
+    "description": "parts for building a small plastic box?",
+    "tag": []
   }
 ]

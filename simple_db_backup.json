@@ -926,17 +926,72 @@
   },
   {
     "location": "clear7",
-    "description": "foobar",
-    "tag": []
-  },
-  {
-    "location": "clear7",
     "description": "screws for mounting nema17 motors",
     "tag": []
   },
   {
     "location": "clear7",
     "description": "dc power connectors",
+    "tag": []
+  },
+  {
+    "location": "clear8",
+    "description": "battery charger, li-ion",
+    "tag": []
+  },
+  {
+    "location": "clear8",
+    "description": "battery charger, 18650",
+    "tag": []
+  },
+  {
+    "location": "clear8",
+    "description": "radar module",
+    "tag": []
+  },
+  {
+    "location": "clear8",
+    "description": "attiny",
+    "tag": []
+  },
+  {
+    "location": "clear8",
+    "description": "3.7V small batter rechargeable",
+    "tag": []
+  },
+  {
+    "location": "clear8",
+    "description": "microphone, small",
+    "tag": []
+  },
+  {
+    "location": "clear8",
+    "description": "top of arduino case?",
+    "tag": []
+  },
+  {
+    "location": "clear8",
+    "description": "9V ac/dc adapter",
+    "tag": []
+  },
+  {
+    "location": "clear8",
+    "description": "some small battery stuff",
+    "tag": []
+  },
+  {
+    "location": "clear8",
+    "description": "solar panel, unknown voltage spec",
+    "tag": []
+  },
+  {
+    "location": "clear8",
+    "description": "1k/2 w 47Ohm resistor pack",
+    "tag": []
+  },
+  {
+    "location": "clear8",
+    "description": "large assortment of labeled resistors",
     "tag": []
   }
 ]
