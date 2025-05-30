@@ -4,7 +4,7 @@ import atexit
 import RPi.GPIO as GPIO
 
 MOTORS = [1, 2, 3, 4]  # Motor IDs
-RPM = 60
+RPM = 90
 STEPS_PER_REV = 200
 ROTATIONS = 5
 TOTAL_STEPS = ROTATIONS * STEPS_PER_REV

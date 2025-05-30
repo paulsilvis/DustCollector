@@ -104,7 +104,7 @@
   },
   {
     "location": "tray2",
-    "description": "gyro accelerometer",
+    "description": "mpu6050 gyro accelerometer",
     "tag": []
   },
   {
@@ -330,7 +330,7 @@
     "tag": []
   },
   {
-    "location": "tray6",
+    "location": "tray7",
     "description": "ADS1115 4-channel adc converter",
     "tag": []
   },
@@ -350,7 +350,7 @@
     "tag": []
   },
   {
-    "location": "tray6",
+    "location": "tray7",
     "description": "GX12-3 connectors with waterproof cap",
     "tag": []
   },
@@ -726,7 +726,7 @@
   },
   {
     "location": "clear3",
-    "description": "small box of various heat-shring tubes",
+    "description": "small box of various heat-shrink tubes",
     "tag": []
   },
   {
@@ -966,16 +966,6 @@
   },
   {
     "location": "flat3",
-    "description": "top of arduino case?",
-    "tag": []
-  },
-  {
-    "location": "flat3",
-    "description": "9V ac/dc adapter",
-    "tag": []
-  },
-  {
-    "location": "flat3",
     "description": "some small battery stuff",
     "tag": []
   },
@@ -1007,6 +997,26 @@
   {
     "location": "flat3",
     "description": "parts for building a small plastic box?",
+    "tag": []
+  },
+  {
+    "location": "flat3",
+    "description": "spool of solid red wire",
+    "tag": []
+  },
+  {
+    "location": "tray6",
+    "description": "gx12-3 connectors (5)",
+    "tag": []
+  },
+  {
+    "location": "tray7",
+    "description": "gx16-3 connectors",
+    "tag": []
+  },
+  {
+    "location": "clear3",
+    "description": "9V ac to dc power supply",
     "tag": []
   }
 ]

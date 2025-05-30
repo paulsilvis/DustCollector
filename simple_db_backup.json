@@ -104,7 +104,7 @@
   },
   {
     "location": "tray2",
-    "description": "gyro accelerometer",
+    "description": "mpu6050 gyro accelerometer",
     "tag": []
   },
   {
@@ -350,7 +350,7 @@
     "tag": []
   },
   {
-    "location": "tray6",
+    "location": "tray7",
     "description": "GX12-3 connectors with waterproof cap",
     "tag": []
   },
@@ -726,7 +726,7 @@
   },
   {
     "location": "clear3",
-    "description": "small box of various heat-shring tubes",
+    "description": "small box of various heat-shrink tubes",
     "tag": []
   },
   {
@@ -940,58 +940,83 @@
     "tag": []
   },
   {
-    "location": "clear8",
+    "location": "flat3",
     "description": "battery charger, 18650",
     "tag": []
   },
   {
-    "location": "clear8",
+    "location": "flat3",
     "description": "radar module",
     "tag": []
   },
   {
-    "location": "clear8",
+    "location": "flat3",
     "description": "attiny",
     "tag": []
   },
   {
-    "location": "clear8",
+    "location": "flat3",
     "description": "3.7V small batter rechargeable",
     "tag": []
   },
   {
-    "location": "clear8",
+    "location": "flat3",
     "description": "microphone, small",
     "tag": []
   },
   {
-    "location": "clear8",
-    "description": "top of arduino case?",
-    "tag": []
-  },
-  {
-    "location": "clear8",
-    "description": "9V ac/dc adapter",
-    "tag": []
-  },
-  {
-    "location": "clear8",
+    "location": "flat3",
     "description": "some small battery stuff",
     "tag": []
   },
   {
-    "location": "clear8",
+    "location": "flat3",
     "description": "solar panel, unknown voltage spec",
     "tag": []
   },
   {
-    "location": "clear8",
+    "location": "flat3",
     "description": "1k/2 w 47Ohm resistor pack",
     "tag": []
   },
   {
-    "location": "clear8",
+    "location": "flat3",
     "description": "large assortment of labeled resistors",
+    "tag": []
+  },
+  {
+    "location": "flat3",
+    "description": "pir sensors (2)",
+    "tag": []
+  },
+  {
+    "location": "flat3",
+    "description": "small suction mounted swivel, purpose unknown",
+    "tag": []
+  },
+  {
+    "location": "flat3",
+    "description": "parts for building a small plastic box?",
+    "tag": []
+  },
+  {
+    "location": "flat3",
+    "description": "spool of solid red wire",
+    "tag": []
+  },
+  {
+    "location": "tray6",
+    "description": "gx12-3 connectors (5)",
+    "tag": []
+  },
+  {
+    "location": "tray7",
+    "description": "gx16-3 connectors",
+    "tag": []
+  },
+  {
+    "location": "clear3",
+    "description": "9V ac to dc power supply",
     "tag": []
   }
 ]
