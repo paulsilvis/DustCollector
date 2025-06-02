@@ -84,18 +84,18 @@ So,  the  _essential_  goals  are:
 ##  2. <a name='TheBigPicture--PhysicalSystem'></a>The  Big  Picture  --  Physical  System
 The  physical  system  consists  of:
 -  the  recycled  impeller,  housing  and  motor  from  the  original  dust  collection  system.
+
 -  a  'Dust  Deputy'  cyclone  to  direct  most  of  the  heavy  debris  downwards  to  ...
+
 -  a  collection  bin  with  a  capacity  of  <tbc>  cubit  feet
--  a  heavy  duty  pleated  commercial  filter  rated  MERV  14  that  catches  particles  as  small  as  1.5  microns,  which  sits  atop...
+-  a  heavy  duty  pleated  commercial  filter  rated  MERV  15  that  catches  particles  as  small  as  3  microns,  which  sits  atop  ...
 -  a  removable  bucket  fastened  securely  to  it  that  holds  dust  released  from  cleaning  the  filter  by  banging  on  it  **gently**  while  dousing  it  with  **low-pressure**  compressed  air  from  the  outside.
 
 The  operation  of  the  impeller  motor  is  controlled  by  a  solid-state  relay  whose  control  input  is  governed  by  the  DustCollector  controller.
 
-The  [canister  filter](https://wynnenv.com/?s=13F230NANO+&post_type=product)  is  from  Wynn  Environmental,  and  costs  about  $230.  This  high-efficiency  filter  traps  over  95%  of  particles  sized  3.0-10.0  microns,  such  as  lint,  dust,  pollen,  pet  dander,  and  mold  spores,  as  well  as  particles  from  coughs,  sneezes,  and  smog.    Here's  a  [filter  rating  chart](https://www.mechreps.com/PDF/Merv_Rating_Chart.pdf)  to  give  you  more  information.
+The  [canister  filter](https://wynnenv.com/?s=13F230NANO+&post_type=product)  is rate MERV 15, comes from  Wynn  Environmental,  and  costs  about  $230.  This  high-efficiency  filter  traps  over  95%  of  particles  sized  3.0-10.0  microns,  such  as  lint,  dust,  pollen,  pet  dander,  and  mold  spores,  as  well  as  particles  from  coughs,  sneezes,  and  smog.    Here's  a  [filter  rating  chart](https://www.mechreps.com/PDF/Merv_Rating_Chart.pdf)  to  give  you  more  information.
 
 At  the  bottom  of  the  filter  a  collection  bucket  is  attached  with  a  "gamma  seal"  lid  --  it  just  twists  off.
-
-
 
 
 ![alt  text](images/system-layout.jpg)
@@ -288,7 +288,7 @@ Bit-to-Pin  Layout  (directly  from  the  code)
         }
 
 
-In  Practical  Summary:
+Practical  Summary:
 ---------------------
 -  byte1  →  fills  chip2  (the  far  one)
 -  byte2  →  fills  chip1  (the  near  one)
@@ -314,9 +314,6 @@ If  you're  building  bytes  on  the  fly:
 **Final  Word:**
 
 Pin  9  (QH*)  serial  out  is  ONLY  used  between  chips.  After  two  chips,  if  you  don't  add  more,  you  can  ignore  it.
-
-----------------------------------------
-
 
 
 
