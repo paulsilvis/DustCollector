@@ -54,7 +54,7 @@ This  was  easy  to  do,  and  reasonably  effective.    The  dust  collector  i
 
 As  the  years  went  on,  I  developed  _severe_  allergy  to  some  specific  types  of  wood  dust.    These  episodes  could  last  for  3  days  of  pure  misery.    I  faced  a  choice  --  either  give  up  woodworking  altogether  or  solve  this  dust  issue.
 
-As  I  put  together  a  plan  for  salvaging  some  parts  of  the  original  collector  and  upgrading  my  filtering  capacity,  I  decided  that  it  would  be  really  _cool_  to  do  just  a  bit  more  automation,  and  have  the  blast  gates  operate  automatically  depending  on  what  tools  (e.g.,  tablesaw,  drillpress)  were  running.
+As  I  put  together  a  plan  for  salvaging  some  parts  of  the  original  collector  and  upgrading  my  filtering  capacity,  I  decided  that  it  would  be  really  _cool_  to  do  just  a  bit  more  automation,  and  have  the  blast  gates  operate  automatically  depending  on  what  machines  (e.g.,  tablesaw,  drillpress)  were  running.
 
 This  would  prevent  me  from  being  lazy  and  just  using  the  tablesaw  for  a  minute  or  two  for  a  quick  cut  without  walking  the  3  steps  to  the  blast  gate.  ;-)    I  did  not  realize  at  the  time  how  much  saving 3  steps  would  cost  in  both  time  and  money.
 
@@ -64,7 +64,7 @@ This  would  prevent  me  from  being  lazy  and  just  using  the  tablesaw  fo
 
 So,  the  _essential_  goals  areh>:
 
--  Open  and  close  appropriate  blast  gates  automatically  when  any  powered  tool  is  running,  and  close  them  when  none  are  running.
+-  Open  and  close  appropriate  blast  gates  automatically  when  any  powered  machine  is  running,  and  close  them  when  none  are  running.
 
 -  Monitor  the  level  of  dust  in  the  main  collection  bin  and  flash  a  visible  warning  of  some  kind  if  it  should  be  emptied  soon.
 
@@ -142,12 +142,12 @@ It  also  has  direct  support  for  an  HDMI  monitor,  USB  keyboard  and  mou
 ###  5.1. <a name='TheMotorSubsystem'></a>The  Motor  Subsystem
 There  are  currently  4  motors  planned,  one  of  which  is  not  yet  implemented  and  is  being  saved  for  possible  use  by  the  router  (mounted  under  the  table-saw  wing)  or  as  an  auxiliary  port  for  the  small  vertical  belt  sander..
 
-The  main  tools  are:
+The  primary  machines  are:
 -  the  table  saw
 -  the  lathe
 -  the  drill  press
 
-Each  of  these  has  a  5-inch  duct  connecting  it  to  the  intake  of  the  dust  collector.    At  some  point  on  the  ductwork  leading  to  each  tool  there  is  a  blast  gate  that  controls  the  flow  of  air  into  the  dust  collector.
+Each  of  these  has  a  5-inch  duct  connecting  it  to  the  intake  of  the  dust  collector.    At  some  point  on  the  ductwork  leading  to  each  machine  there  is  a  blast  gate  that  controls  the  flow  of  air  into  the  dust  collector.
 
 Each  blast  gate  has  a  stepper  motor  mounted  on  it  to  move  the  gate  opened  and  closed.    Momentary-contact  limit  micro-switches  are  mounted  at  each  end  of  travel  to  tell  the  controller  that  the  blast  gate  has  reached  the  desired  position.    [Note  --  a  timeout  will  occur  if  this  hasn't  happened  in  a  reasonable  amount  of  time,  and  a  warning  of  some  sort  will  be  issued.
 
@@ -164,14 +164,14 @@ The  digital  I/O  is  almost  entirely  managed  by  a  set  of  PCF8574  I2C-b
 [Yes,  this  is  excessive.    I  don't  care.    I  like  lots  of  switches  and  buttons.]
 
 ###  5.3. <a name='TheCurrentSenseSubsystem'></a>The  Current  Sense  Subsystem
-The  'on'  or  'off'  state  of  a  given  power  tool  such  as  the  table  saw  is  determined  by  detecting  the  presence  or  absence  of  current  in  a  split-coil  transformer  wrapped  around  the  'hot'  line  going  to  the  saw.    This  is  connected  to  a  custom  circuit  on  the  controller  that  converts  the  0  -  100  mA  current  into  a  0-5V  signal  to  be  read  by  an  a/d  converter  and  converted  to  a  logic  value  meaning  'on'  or  'off'.
+The  'on'  or  'off'  state  of  a  given  machine   such  as  the  table  saw  is  determined  by  detecting  the  presence  or  absence  of  current  in  a  split-coil  transformer  wrapped  around  the  'hot'  line  going  to  the  saw.    This  is  connected  to  a  custom  circuit  on  the  controller  that  converts  the  0  -  100  mA  current  into  a  0-5V  signal  to  be  read  by  an  a/d  converter  and  converted  to  a  logic  value  meaning  'on'  or  'off'.
 
 ###  5.4. <a name='TheGateControlSubsystem'></a>The  Gate  Control  Subsystem
-The  gate  conrol  system  is  responsible  for  sensing  machine  state  (On  or  Off),  opening/closing  the  appropriate  blast  gate[s]  and  turning  on  (or  off)  the  dust  collector  impeller  motor.
+The  gate  control  system  is  responsible  for  sensing  machine  state  (On  or  Off),  opening/closing  the  appropriate  blast  gate[s]  and  turning  on  (or  off)  the  dust  collector  impeller  motor.
 
 ![Gate  States](images/gate-states.jpg)
 
-There  is  currently  a  provision  for  a  delay  before  turning  off  all  tools  and  turning  off  the  dust  collector  impeller  motor.    This  is  to  allow  any  remaining  dust  to  be  sucked  out  of  the  system.    It  may  turn  out  that  this  is  unnecessary  due  to  the  high  velocity  of  the  air  in  the  ducts  (estimated  to  be  over  80  MPH).
+There  is  currently  a  provision  for  a  delay  after  turning  off  all  machines  and  turning  off  the  dust  collector  impeller  motor.    This  is  to  allow  any  remaining  dust  to  be  sucked  out  of  the  system.    It  may  turn  out  that  this  is  unnecessary  due  to  the  high  velocity  of  the  air  in  the  ducts  (estimated  to  be  over  80  MPH).
 
 ##  6. <a name='TheTopLevelSoftwareStructure'></a>The  Top  Level  Software  Structure
 
@@ -223,6 +223,8 @@ D/C:
         Gnd  --  White
 
 All  Ground  connections  are  tied  together  on  the  board.
+
+For some cables, in particular those that carry I2C data, I used off-the-shelf premade Dupont cables.  In many (most) cases I had to rewire one end to straighten out the different sequence of connections from different manufacturers.  Be careful if you disconnect and reconnect anything -- make sure you know what you're doing.
 
 ____Remember  --  this  is  not  guaranteed!      Look  at  where  the  wires  go  to  be  sure.____
 
