@@ -54,7 +54,7 @@ This  was  easy  to  do,  and  reasonably  effective.    The  dust  collector  i
 
 As  the  years  went  on,  I  developed  _severe_  allergy  to  some  specific  types  of  wood  dust.    These  episodes  could  last  for  3  days  of  pure  misery.    I  faced  a  choice  --  either  give  up  woodworking  altogether  or  solve  this  dust  issue.
 
-As  I  put  together  a  plan  for  salvaging  some  parts  of  the  original  collector  and  upgrading  my  filtering  capacity,  I  decided  that  it  would  be  really  _cool_  to  do  just  a  bit  more  automation,  and  have  the  blast  gates  operate  automatically  depending  on  what  machines  (e.g.,  tablesaw,  drillpress)  were  running.
+As  I  put  together  a  plan  for  salvaging  some  parts  of  the  original  collector  and  upgrading  my  filtering  capacity,  I  decided  that  it  would  be  really  _cool_  to  do  just  a  bit  more  automation,  and  have  the  blast  gates  operate  automatically  depending  on  what  tools  (e.g.,  tablesaw,  drillpress)  were  running.
 
 This  would  prevent  me  from  being  lazy  and  just  using  the  tablesaw  for  a  minute  or  two  for  a  quick  cut  without  walking  the  3  steps  to  the  blast  gate.  ;-)    I  did  not  realize  at  the  time  how  much  saving 3  steps  would  cost  in  both  time  and  money.
 
@@ -62,9 +62,9 @@ This  would  prevent  me  from  being  lazy  and  just  using  the  tablesaw  fo
 
 ###  1.1. <a name='EssentialGoals'></a>Essential  Goals
 
-So,  the  _essential_  goals  are:
+So,  the  _essential_  goals  areh>:
 
--  Open  and  close  appropriate  blast  gates  automatically  when  any  powered  machine  is  running,  and  close  them  when  none  are  running.
+-  Open  and  close  appropriate  blast  gates  automatically  when  any  powered  tool  is  running,  and  close  them  when  none  are  running.
 
 -  Monitor  the  level  of  dust  in  the  main  collection  bin  and  flash  a  visible  warning  of  some  kind  if  it  should  be  emptied  soon.
 
@@ -93,7 +93,7 @@ The  operation  of  the  impeller  motor  is  controlled  by  a  solid-state  re
 
 The  [canister  filter](https://wynnenv.com/?s=13F230NANO+&post_type=product)  is  from  Wynn  Environmental,  and  costs  about  $230.  This  high-efficiency  filter  traps  over  95%  of  particles  sized  3.0-10.0  microns,  such  as  lint,  dust,  pollen,  pet  dander,  and  mold  spores,  as  well  as  particles  from  coughs,  sneezes,  and  smog.    Here's  a  [filter  rating  chart](https://www.mechreps.com/PDF/Merv_Rating_Chart.pdf)  to  give  you  more  information.
 
-At  the  bottom  of  the  filter  a  collection  bucket  is  attached  with  a  "gamma  seal"  lid  --  it  just  twists  off.
+At  the  botom  of  the  filter  a  collection  bucket  is  attached  with  a  "gamma  seal"  lid  --  it  just  twists  off.
 
 
 
@@ -142,12 +142,12 @@ It  also  has  direct  support  for  an  HDMI  monitor,  USB  keyboard  and  mou
 ###  5.1. <a name='TheMotorSubsystem'></a>The  Motor  Subsystem
 There  are  currently  4  motors  planned,  one  of  which  is  not  yet  implemented  and  is  being  saved  for  possible  use  by  the  router  (mounted  under  the  table-saw  wing)  or  as  an  auxiliary  port  for  the  small  vertical  belt  sander..
 
-The  primary  machines  are:
+The  main  tools  are:
 -  the  table  saw
 -  the  lathe
 -  the  drill  press
 
-Each  of  these  has  a  5-inch  duct  connecting  it  to  the  intake  of  the  dust  collector.    At  some  point  on  the  ductwork  leading  to  each  machine  there  is  a  blast  gate  that  controls  the  flow  of  air  into  the  dust  collector.
+Each  of  these  has  a  5-inch  duct  connecting  it  to  the  intake  of  the  dust  collector.    At  some  point  on  the  ductwork  leading  to  each  tool  there  is  a  blast  gate  that  controls  the  flow  of  air  into  the  dust  collector.
 
 Each  blast  gate  has  a  stepper  motor  mounted  on  it  to  move  the  gate  opened  and  closed.    Momentary-contact  limit  micro-switches  are  mounted  at  each  end  of  travel  to  tell  the  controller  that  the  blast  gate  has  reached  the  desired  position.    [Note  --  a  timeout  will  occur  if  this  hasn't  happened  in  a  reasonable  amount  of  time,  and  a  warning  of  some  sort  will  be  issued.
 
@@ -157,19 +157,6 @@ The  [stepper  motors](https://www.amazon.com/dp/B00PNEQKC0?ref_=ppx_hzsearch_co
 
 The  requirement  to  run  the  steppers  fast  enough  to  satisfy  a  2-second  open/close  time  was  difficult  to  handle  with  plain  old  I2C  expanders  like  the  MCP23017  --  the  bus  was  just  too  slow.    I  opted  for  creating  a  new  sub-sub-system  called  the  'distributor'  which  uses  a  pair  of  8-bit  shift  registers  and  the  SPI  bus  to  squirt  out  enable/step/dir  signals  to  4  motors  quite  rapidly.    There  is  a  detailed  breakdown  in  the  [Wiring](#wiring)  section  to  show  how  this  is  mapped  to  individual  motors.
 
-There is also a fritzing schematic in the docs directory.  It looks like this:
-![schematic](MotorDistributorSystem_schem.jpg)
-
-Yes, it's small.  Use [fritzing](https://fritzing.org/) if you really want to explore it.
-
-### A Picture is Worth a Thousand Words
-
-If you find it necessary to replace a Jeanoko DRV8825 board, be sure to reconnect it as shown here.  The upper portion of the picture clearly shows the connects that control the chip, and the lower portion clearly shows the connections to the motor cable.  **Do NOT mess this up!**
-
-Also -- before messing with cables to motors, **please** disconnect that little red wire that runs from the 12V bus to the red 3-pin connector labeled 'V'.  You'll be glad you did.
-
-![see!](DRV8825-connections.jpg)
-
 
 ###  5.2. <a name='TheDigitalIOSubsystem'></a>The  Digital  I/O  Subsystem
 The  digital  I/O  is  almost  entirely  managed  by  a  set  of  PCF8574  I2C-based  8-bit  expander  boards.    5  of  them  ganged  together  gives  40  I/O  bits,  which  are  periodically  read  into  a  40-bit  buffer.    See  the  section  on  Digital  I/O  Pin  Map  for  details.
@@ -177,14 +164,14 @@ The  digital  I/O  is  almost  entirely  managed  by  a  set  of  PCF8574  I2C-b
 [Yes,  this  is  excessive.    I  don't  care.    I  like  lots  of  switches  and  buttons.]
 
 ###  5.3. <a name='TheCurrentSenseSubsystem'></a>The  Current  Sense  Subsystem
-The  'on'  or  'off'  state  of  a  given  machine   such  as  the  table  saw  is  determined  by  detecting  the  presence  or  absence  of  current  in  a  split-coil  transformer  wrapped  around  the  'hot'  line  going  to  the  saw. This output is fed to a [sensor module](https://www.digikey.com/en/products/detail/dfrobot/SEN0211/6588615?s=N4IgTCBcDaIASDgCAjAdgMwA4C0SkE4AWLAOQBEFEBlAUWIAYxcKBxAJQEEA1ASQBUBNSHHbF2AGQDyzYQGE4MgKqtWtXnBrFKEuCAC6AXyA).  The output of that module is fed to an ADS1115 4-channel a/d converter and read over the I2C bus.
+The  'on'  or  'off'  state  of  a  given  power  tool  such  as  the  table  saw  is  determined  by  detecting  the  presence  or  absence  of  current  in  a  split-coil  transformer  wrapped  around  the  'hot'  line  going  to  the  saw.    This  is  connected  to  a  custom  circuit  on  the  controller  that  converts  the  0  -  100  mA  current  into  a  0-5V  signal  to  be  read  by  an  a/d  converter  and  converted  to  a  logic  value  meaning  'on'  or  'off'.
 
 ###  5.4. <a name='TheGateControlSubsystem'></a>The  Gate  Control  Subsystem
-The  gate  control  system  is  responsible  for  sensing  machine  state  (On  or  Off),  opening/closing  the  appropriate  blast  gate[s]  and  turning  on  (or  off)  the  dust  collector  impeller  motor.
+The  gate  conrol  system  is  responsible  for  sensing  machine  state  (On  or  Off),  opening/closing  the  appropriate  blast  gate[s]  and  turning  on  (or  off)  the  dust  collector  impeller  motor.
 
 ![Gate  States](images/gate-states.jpg)
 
-There  is  currently  a  provision  for  a  delay  after  turning  off  all  machines  and  turning  off  the  dust  collector  impeller  motor.    This  is  to  allow  any  remaining  dust  to  be  sucked  out  of  the  system.    It  may  turn  out  that  this  is  unnecessary  due  to  the  high  velocity  of  the  air  in  the  ducts  (estimated  to  be  over  80  MPH).
+There  is  currently  a  provision  for  a  delay  before  turning  off  all  tools  and  turning  off  the  dust  collector  impeller  motor.    This  is  to  allow  any  remaining  dust  to  be  sucked  out  of  the  system.    It  may  turn  out  that  this  is  unnecessary  due  to  the  high  velocity  of  the  air  in  the  ducts  (estimated  to  be  over  80  MPH).
 
 ##  6. <a name='TheTopLevelSoftwareStructure'></a>The  Top  Level  Software  Structure
 
@@ -237,18 +224,18 @@ D/C:
 
 All  Ground  connections  are  tied  together  on  the  board.
 
-For some cables, in particular those that carry I2C data, I used off-the-shelf premade Dupont cables.  In many (most) cases I had to rewire one end to straighten out the different sequence of connections from different manufacturers.  Be careful if you disconnect and reconnect anything -- make sure you know what you're doing.
-
 ____Remember  --  this  is  not  guaranteed!      Look  at  where  the  wires  go  to  be  sure.____
 
+###  9.1. <a name='TheCurrentSenseCircuit'></a>The Current Sense Circuit
 
+This custom circuit board holds 4 identical circuits to convert a 0-100 mA current from a transformer into a small voltage that a 4-channel ADS1115 a/d converter can read.
+
+<TBD> Need a circuit diagram here.
 
 ###  9.2. <a name='TheDistributor-1'></a>The  Distributor
 This  custom  circuit  board  is  mounted  with  the  4  stepper  driver  boards.    It  consists  of  two  74HC595  8-bit  shift  registers  fed  by  the  fast  SPI  interface.
 
-![distributor wiring](distributor.jpg)
-his custom circuit board holds 4 identical circuits to convert a 0-100 mA current from a transformer into a small voltage that a 4-channel ADS1115 a/d converter can read.
-Yes, I know the picture is tiny.  If you can't read it look at the .jpg image here in the docs directory.
+<TBD> Need a circuit diagram here.
 
 This  is  explained  in  great  detail  here  since  it  took  me  a  while  to  figure  it  all  out  and  get  it  straight.
 
@@ -322,7 +309,7 @@ Pin  9  (QH*)  serial  out  is  ONLY  used  between  chips.  After  two  chips, 
 
 #####    The  Net  Result
 
-This  organization  means  that  it  is  easy  to  spot  the  3  signals  need  for  each  motor.    Take  a  look  at  the  circuit  board  and  you'll  see  that  E(enable),  S(step)  and  D(dir)  are  grouped  for  each  motor.    Look  at  the  two  shift-register  chips.  For  chip  1  (left)  pins  1,  2  and  3  are  ESD  for  motor  4  (the  nearest  motor.  For  chip  2  (right)  pins  4,  5  and  6  are  ESD  for  Motor  1  (the  nearest  motor).    You  get  the  idea.  Cool.
+This  organization  means  that  it  is  easy  to  spot  the  3  signals  need  for  each  motor.    Take  a  look  at  the  circuit  board  and  you'll  s        """ee  that  E(enable),  S(step)  and  D(dir)  are  grouped  for  each  motor.    Look  at  the  two  shift-register  chips.  For  chip  1  (left)  pins  1,  2  and  3  are  ESD  for  motor  4  (the  nearest  motor.  For  chip  2  (right)  pins  4,  5  and  6  are  ESD  for  Motor  1  (the  nearest  motor).    You  get  the  idea.  Cool.
 
 ##  10. <a name='PowerSupplies'></a>Power  Supplies
 
@@ -392,52 +379,52 @@ This  section  contains  advice  to  my  future  self  for  likely  maintenance 
 
 There  are  4  stepper  motor  DRV8825  driver  boards  mounted  on  an  acrylic  plate,  labeled  1,  2,  3  and  4.    In  the  center  of  those  is  a  custom-made  circuit  board  called  'The  Distributor'  which  uses  the  SPI  bus  to  squirt  control  bits  very  rapidly.
 
-The  DRV8825  chips  are  mounted  on  [Jeanoko  DRV8825/A4988  Stable  42  Stepper  Motor  Driver  Expansion  Boards](https://www.amazon.com/dp/B0C4P8997M?ref_=ppx_hzsearch_conn_  is  to  press  the  little  button  below  the  emergency  shutoff  labeled  "reboot  /  shutdown".    If  you  press  for  1  second  or  less,  it  will  reboot.    If  you  hold  it  for  more  than  2  seconds,  it  will  just  shutdown  the  Raspberry  Pi,    In  _neither_  case  will  it  shut  off  the  power  supplies.    To  restart  the  system,  push  the  big  red  button,  then  release  it  by  twisting  clockwise.dt_b_fed_asin_title_1).    Each  board  has  a  very  tiny  potentiometer  for  adjusting  the  current  limit.    You  ____must____  adjust  these  if  you  replace  them  or  you  run  the  risk  of  frying  something     important.    
+The  DRV8825  chips  are  mounted  on  [Jeanoko  DRV8825/A4988  Stable  42  Stepper  Motor  Driver  Expansion  Boards](https://www.amazon.com/dp/B0C4P8997M?ref_=ppx_hzsearch_conn_  is  to  press  the  little  button  below  the  emergency  shutoff  labeled  "reboot  /  shutdown".    If  you  press  for  1  second  or  less,  it  will  reboot.    If  you  hold  it  for  more  than  2  seconds,  it  will  just  shutdown  the  Raspberry  Pi,    In  _neither_  case  will  it  shut  off  the  power  supplies.    To  restart  the  system,  push  the  big  red  button,  then  release  it  by  twisting  clockwise.dt_b_fed_asin_title_1).    Each  board  has  a  very  tiny  potentiometer  for  adjusting  the  current  limit.    You  ____must____  adjust  these  if  you  replace  them  or  you  run  the  risk  of  frying  something  important.    
 
 **Safe  VREF  Setup  Without  Motor  Connected  (Courtesy  of  Bob)**
 
 **Purpose:**
 
 
-Prevents the chance  of  slamming  full  current  into  the  motor  during  first  power-up.
+        Prevents  the  chance  of  slamming  full  current  into  the  motor  during  first  power-up.
 
-Avoids  a  damaged  motor,  a  fried  driver,  or  accidental  runaway  heating.
+        Avoids  a  damaged  motor,  a  fried  driver,  or  accidental  runaway  heating.
         
 **Steps:**
 
-Install  the  new  DRV8825  board,  BUT  DO  NOT  connect  the  motor  coils  yet.
+        Install  the  new  DRV8825  board,  BUT  DO  NOT  connect  the  motor  coils  yet.
 
-Leave  the  motor  wiring  unplugged.
+                Leave  the  motor  wiring  unplugged.
 
-Only  connect  logic  (VDD,  GND,  STEP,  DIR,  ENABLE)  and  motor  power  (VMOT,  GND).
+                Only  connect  logic  (VDD,  GND,  STEP,  DIR,  ENABLE)  and  motor  power  (VMOT,  GND).
 
-Power  up  the  system  (logic  and  VMOT  live).
+        Power  up  the  system  (logic  and  VMOT  live).
 
-Measure  VREF  at  the  trimpot  just  like  before:
+        Measure  VREF  at  the  trimpot  just  like  before:
 
-Black  multimeter  probe  to  GND.
+                Black  multimeter  probe  to  GND.
 
-Red  probe  to  the  metal  top  of  the  potentiometer.
+                Red  probe  to  the  metal  top  of  the  potentiometer.
 
-Adjust  VREF  carefully:
+        Adjust  VREF  carefully:
 
-Clockwise  to  increase,  counterclockwise  to  decrease.
+                Clockwise  to  increase,  counterclockwise  to  decrease.
 
-Set  VREF  based  on  the  formula:
-VREF=0.5×Desired  Motor  Current  (A)
-VREF=0.5×Desired  Motor  Current  (A)
+                Set  VREF  based  on  the  formula:
+                VREF=0.5×Desired  Motor  Current  (A)
+                VREF​=0.5×Desired  Motor  Current  (A)
 
-Confirm  the  VREF  is  in  the  right  ballpark  (e.g.,  0.60V  for  1.2A  motor  current).
+        Confirm  the  VREF  is  in  the  right  ballpark  (e.g.,  0.60V  for  1.2A  motor  current).
 
-Power  down  the  system.
+        Power  down  the  system.
 
-Connect  the  motor  coils  properly:
+        Connect  the  motor  coils  properly:
 
-Double-check  you  know  which  motor  wire  pairs  are  each  coil.
+                Double-check  you  know  which  motor  wire  pairs  are  each  coil.
 
-(If  not  sure,  I  can  give  you  a  10-second  multimeter  method.)
+                (If  not  sure,  I  can  give  you  a  10-second  multimeter  method.)
 
-Power  back  up  and  test  the  motor  gently  (slow  step  pulses  first).
+        Power  back  up  and  test  the  motor  gently  (slow  step  pulses  first).
 
 I  recommend  that  you  use  a  very,  very  tiny  phillips  screwdriver  to  do  the  adjustment.    If  you  use  one  that  is  too  large,  it  will  not  engage  but  will  _look_  like  its  engaged,  and  nothing  will  happen  (how  do  I  know  this?).    The  potentiometer  is  very  sensitive,  so  make  tiny  adjustments  as  you  get  close.
 
@@ -449,7 +436,7 @@ If  you  have  to  replace  a  power  supply,  try  to  get  an  identical  repl
 ###  13.1. <a name='Scripting'></a>Scripting
 There are some details about startup that bear mentioning here.
 
-This section cannot be filled in until we actually figure out what goes here.
+<TBD> MENTION THEM!
 
 ###  13.2. <a name='Coding'></a>Coding
 

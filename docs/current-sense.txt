@@ -1,0 +1,25 @@
+                     V_sense
+                        ↓
+CT_A ─ [470Ω] ────+───>|───+────> LM358 pin 3
+                  |     D1   |
+                  |         === 10µF cap (+ here)
+                  |          |
+                  +──────────┴──> GND
+CT_B ─────────────────────────> GND
+
+
+                LM358
+
+        IN+      IN–      OUT
+         │        │        │
+         │        │        │
+CT signal ────> Pin 3      │
+                   │       │
+                   └────> Pin 2
+                           │
+                         Pin 1 ───> ADS1115 A0
+
+Power:
+   Pin 8 → 3.3V (same as ADS1115)
+   Pin 4 → GND
+
