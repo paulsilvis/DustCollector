@@ -22,6 +22,9 @@ def get_cpu_temp_fahrenheit():
     temp_f = temp_c * 9.0 / 5.0 + 32.0
     return temp_f
 
+GPIO.output(FAN1_PIN, OFF)
+GPIO.output(FAN2_PIN, OFF)
+
 try:
     # Prompt for setpoint once
     setpoint_str = input("Enter CPU temp setpoint in °F: ").strip()
@@ -33,12 +36,14 @@ try:
         print(f"CPU Temperature: {temp_f:.2f} °F")
 
         # Compare and control fan2
-        if temp_f > setpoint:
+        if temp_f > setpoint + 10:
+            GPIO.output(FAN1_PIN, ON)
             GPIO.output(FAN2_PIN, ON)
-            print("Fan 2 ON.")
-        else:
+            print("Fans 1 and 2 ON.")
+        elif temp_f <= setpoint:
+            GPIO.output(FAN1_PIN, OFF)
             GPIO.output(FAN2_PIN, OFF)
-            print("Fan 2 OFF.")
+            print("Fan 1 and 2 OFF.")
 
         time.sleep(2)  # adjust polling interval as you like
 
